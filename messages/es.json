@@ -1,0 +1,350 @@
+{
+  "brand": {
+    "name": "TechToJob"
+  },
+  "metadata": {
+    "title": "TechToJob | Comunidad de desarrolladores y empresas tech",
+    "description": "Comunidad de desarrolladores y empresas tech en español donde participas, construyes y muestras cómo trabajas antes de que aparezca la próxima oportunidad.",
+    "socialTitle": "Comunidad tech donde tu trabajo habla | TechToJob",
+    "socialDescription": "Participa, construye y conecta con desarrolladores y empresas tech en español antes de que aparezca la vacante.",
+    "imageAlt": "TechToJob, comunidad de desarrolladores y empresas tech en español"
+  },
+  "navigation": {
+    "howItWorks": "Cómo funciona",
+    "talent": "Talento",
+    "tournaments": "Torneos",
+    "networking": "Networking",
+    "companies": "Empresas",
+    "community": "Comunidad",
+    "menu": "Abrir navegación",
+    "skipToContent": "Saltar al contenido"
+  },
+  "hero": {
+    "title": "No eres solo\nun número",
+    "tagline": "Tu trabajo habla por ti.",
+    "lead": "Cuarenta candidaturas. Cero respuestas.",
+    "description": "No es culpa tuya: tu CV desaparece entre cientos.",
+    "context": "Aquí las empresas ven cómo trabajas antes de contratarte.",
+    "topics": {
+      "community": "Comunidad abierta",
+      "tournaments": "Torneos",
+      "projects": "Proyectos reales",
+      "companies": "Empresas"
+    },
+    "activity": {
+      "channel": "#proyectos",
+      "author": "Marina",
+      "replier": "Noa",
+      "time": "hoy, 18:42",
+      "message": "Acabo de publicar la primera versión. ¿Alguien me ayuda con el responsive?",
+      "reply": "Voy. Te dejo feedback en el hilo.",
+      "status": "La comunidad está construyendo ahora",
+      "pullRequest": "Pull request #24"
+    }
+  },
+  "profile": {
+    "name": "Esteban C.",
+    "role": "Frontend · Aprendiendo en público",
+    "outdated": {
+      "contacts": "+500 contactos",
+      "experience": "Años de experiencia",
+      "languages": "Lista interminable de tecnologías",
+      "match": "Porcentaje de coincidencia"
+    },
+    "heading": "Lo que sí cuenta",
+    "strengths": {
+      "project": "Construye un proyecto open source",
+      "learning": "Explica lo que está aprendiendo",
+      "design": "Cuida las decisiones del producto",
+      "sharing": "Ayuda a otras personas",
+      "growth": "Mejora con cada entrega"
+    }
+  },
+  "community": {
+    "join": "Entrar al Discord",
+    "joinFull": "Entrar al Discord, +500 miembros",
+    "members": "+500",
+    "areas": {
+      "development": "Development",
+      "support": "IT & Support",
+      "data": "Data & AI",
+      "security": "Cybersecurity",
+      "product": "Product & Design"
+    }
+  },
+  "howItWorks": {
+    "title": "Cómo funciona",
+    "subtitle": "Tu primer trabajo tech empieza aquí",
+    "joinDiscord": "Entrar y presentarme",
+    "steps": {
+      "join": {
+        "title": "Entra y encuentra tu canal",
+        "description": "Preséntate con tu stack, tu nivel y lo que te interesa construir.",
+        "items": {
+          "channels": "Explora canales de tu área",
+          "introduction": "Cuenta qué sabes y qué estás aprendiendo",
+          "project": "Comparte un proyecto o una duda"
+        }
+      },
+      "participate": {
+        "title": "Construye delante de otros",
+        "description": "Participa en retos, pide feedback y muestra tu forma de trabajar.",
+        "items": {
+          "challenge": "Apúntate a un torneo",
+          "build": "Colabora con otras personas",
+          "feedback": "Convierte dudas en decisiones"
+        }
+      },
+      "connect": {
+        "title": "Conecta con oportunidades",
+        "description": "Cuando alguien busca talento, ya existe contexto sobre ti y sobre tu trabajo.",
+        "items": {
+          "messages": "Habla con empresas de la comunidad",
+          "work": "Enseña trabajo real",
+          "fit": "Decide si la oportunidad encaja contigo"
+        }
+      }
+    }
+  },
+  "talent": {
+    "title": "Tu perfil no termina en un PDF",
+    "intro": "Publica tu stack, nivel y disponibilidad. Añade proyectos, decisiones y conversaciones que muestran cómo trabajas.",
+    "channel": "#perfiles",
+    "card": {
+      "time": "hoy a las 9:41",
+      "replyTime": "hoy a las 9:42",
+      "fields": {
+        "stack": "Stack",
+        "level": "Nivel",
+        "availability": "Disponibilidad"
+      },
+      "values": {
+        "stack": "React · TypeScript · Next.js",
+        "level": "Junior",
+        "availability": "Disponible"
+      }
+    },
+    "points": {
+      "human": "Una persona puede leer tu perfil completo",
+      "junior": "No necesitas ser senior para participar",
+      "free": "Publicar tu perfil no cuesta dinero"
+    }
+  },
+  "companies": {
+    "title": "Contrata con contexto, no a ciegas",
+    "intro": "Publica qué buscas y conoce perfiles que ya participan, construyen y colaboran dentro de la comunidad.",
+    "channel": "#oportunidades",
+    "card": {
+      "author": "Equipo de producto",
+      "time": "hoy a las 10:15",
+      "replyTime": "hoy a las 10:16",
+      "want": "Buscamos frontend junior",
+      "rows": {
+        "tournaments": "Ha participado en un torneo",
+        "projects": "Tiene proyectos que podemos revisar",
+        "known": "La comunidad conoce cómo trabaja"
+      }
+    },
+    "points": {
+      "seeWork": "Observa cómo trabaja antes de la entrevista",
+      "context": "Menos automatización, más contexto humano",
+      "active": "Encuentra perfiles que ya están participando"
+    }
+  },
+  "tournaments": {
+    "title": "Rompe con el círculo",
+    "subtitle": "Para trabajar necesitas experiencia, y para tener experiencia necesitas trabajar.",
+    "lead": "Los torneos son la salida: brief público, entregas reales y jurado de la comunidad. Construyes algo que se usa de verdad, demuestras cómo trabajas y, si destacas, puede haber algo más que aprendizaje.",
+    "meta": "Esta landing también nació de un torneo",
+    "winner": "Proyecto ganador",
+    "winnerDescription": "Deja de hacer proyectos genéricos sin cliente. Súmate a un torneo y construye algo que se usa de verdad.",
+    "processTitle": "Del brief al uso real",
+    "jury": "Participantes y jurado de la comunidad",
+    "benefits": {
+      "learn": "Ganar experiencia real",
+      "showcase": "Crear trabajo demostrable",
+      "visibility": "Visibilidad ante empresas"
+    },
+    "board": {
+      "brief": "Brief público",
+      "building": "Construcción abierta",
+      "review": "Feedback del jurado",
+      "shipping": "Proyecto en uso"
+    }
+  },
+  "networking": {
+    "title": "Ningún stack pesa más que conocer gente.",
+    "intro": "Puedes dominar la tecnología perfecta y seguir sin respuestas. Quien te conoce te avisa, te recomienda y te abre puertas que ninguna herramienta abre.",
+    "channels": {
+      "development": "#desarrollo",
+      "networking": "#networking",
+      "jobs": "#ofertas-trabajo",
+      "forum": "#foro"
+    },
+    "messages": {
+      "question": "¿Qué framework me dará más oportunidades?",
+      "answer": "Ninguno. Las oportunidades las dan las personas.",
+      "opportunity": "Hablé de ti con el equipo que está contratando.",
+      "authors": {
+        "question": "Elena",
+        "answer": "Rubén",
+        "opportunity": "Sara"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Lo que cambia cuando dejas de construir solo",
+    "profileLabel": "Perfil de",
+    "items": [
+      {
+        "name": "Lucía M.",
+        "role": "Desarrolladora frontend",
+        "quote": "Llegué con un proyecto a medias y acabé entendiendo cómo explicar cada decisión. El feedback me ayudó tanto como el código."
+      },
+      {
+        "name": "Diego P.",
+        "role": "Estudiante de desarrollo",
+        "quote": "Aquí pude preguntar sin sentir que llegaba tarde. Ver a otras personas construir me dio una ruta mucho más clara."
+      },
+      {
+        "name": "Marta S.",
+        "role": "Product designer",
+        "quote": "Una conversación terminó convirtiéndose en una colaboración. Eso no habría ocurrido enviando candidaturas en silencio."
+      },
+      {
+        "name": "Álvaro N.",
+        "role": "Tech recruiter",
+        "quote": "Poder revisar proyectos y conversaciones aporta un contexto que nunca aparece completo en un CV."
+      }
+    ]
+  },
+  "news": {
+    "title": "Lo último en la comunidad",
+    "articleLabel": "Artículo",
+    "items": [
+      {
+        "title": "Ya tenemos landing: Esteban Casadei gana el torneo",
+        "date": "2026-09-25",
+        "dateLabel": "25 sep 2026",
+        "category": "Torneos",
+        "summary": "Su propuesta ganó el reto de diseñar y construir esta página, y se convierte en la landing oficial de TechToJob.",
+        "links": [
+          { "label": "LinkedIn de Esteban", "url": "https://www.linkedin.com/in/esteban-casadei-087553357/" }
+        ]
+      },
+      {
+        "title": "Nuestro primer video ya está en TikTok e Instagram",
+        "date": "2026-09-15",
+        "dateLabel": "15 sep 2026",
+        "category": "Comunidad",
+        "summary": "Anuncio del torneo en curso: el reto que decidirá la landing oficial de la comunidad, contado en video.",
+        "links": [
+          { "label": "Ver en TikTok", "network": "tiktok" },
+          { "label": "Ver en Instagram", "network": "instagram" }
+        ]
+      },
+      {
+        "title": "Ya tenemos logo: Pablo Exposito gana el torneo de identidad",
+        "date": "2026-09-03",
+        "dateLabel": "3 sep 2026",
+        "category": "Torneos",
+        "summary": "El reto del 3 de septiembre decidió la identidad visual de la comunidad. La propuesta ganadora es de Pablo Exposito (@novision_studio).",
+        "links": [
+          { "label": "LinkedIn de Pablo", "url": "https://www.linkedin.com/in/pablo-exposito-23576a376/" }
+        ]
+      }
+    ]
+  },
+  "newsletter": {
+    "title": "Infórmate de las novedades de la comunidad.",
+    "description": "Recibe una selección mensual de torneos, proyectos, conversaciones y oportunidades compartidas en la comunidad.",
+    "label": "Tu correo electrónico",
+    "placeholder": "tu@email.com",
+    "button": "Recibir el resumen mensual",
+    "note": "Un correo al mes. Sin spam. Puedes darte de baja cuando quieras."
+  },
+  "closing": {
+    "title": "Hay un hueco para ti en esta comunidad.",
+    "description": "Entra, comparte lo que estás construyendo y deja que la comunidad conozca cómo trabajas.",
+    "button": "Entra al Discord",
+    "wallLabel": "Muro de la comunidad: cada blobatar representa a una persona de TechToJob. Puedes arrastrarlo para explorarlo.",
+    "hint": "Arrastra para conocer a la comunidad",
+    "spot": {
+      "label": "Un hueco libre en la comunidad",
+      "title": "Este hueco tiene tu nombre.",
+      "cta": "Reclamarlo en Discord"
+    },
+    "members": [
+      "Lucía",
+      "Marcos",
+      "Elena",
+      "Rubén",
+      "Sara",
+      "Dani",
+      "Carla",
+      "Iker",
+      "Nerea",
+      "Pablo",
+      "Marta",
+      "Álvaro",
+      "Julia",
+      "Sergio",
+      "Andrea",
+      "Hugo",
+      "Claudia",
+      "Adrián",
+      "Paula",
+      "Jorge",
+      "Natalia",
+      "Óscar",
+      "Carmen",
+      "Raúl",
+      "Aitana",
+      "Víctor",
+      "Laia",
+      "Bruno",
+      "Irene",
+      "Gonzalo",
+      "Vera",
+      "Mario",
+      "Alba",
+      "Íñigo",
+      "Jimena",
+      "Leo",
+      "Daniela",
+      "Álex",
+      "Noa",
+      "Enzo",
+      "Martina",
+      "Thiago",
+      "Emma",
+      "Gael",
+      "Chloe",
+      "Ian",
+      "Valeria",
+      "Mateo",
+      "Lara",
+      "Dylan",
+      "Vega",
+      "Eric",
+      "Marina",
+      "Biel",
+      "Hugo M.",
+      "Candela",
+      "Nil",
+      "Rocío",
+      "Jan",
+      "Abril"
+    ]
+  },
+  "footer": {
+    "description": "Comunidad de desarrolladores y empresas tech en español.",
+    "talent": "Talento",
+    "companies": "Empresas",
+    "community": "Comunidad",
+    "legal": "Legal",
+    "privacyPending": "Privacidad pendiente de publicación",
+    "termsPending": "Aviso legal pendiente de publicación",
+    "rights": "TechToJob"
+  }
+}

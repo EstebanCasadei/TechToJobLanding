@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-sora);
+  --color-ink: #2f3436;
+  --color-primary: #84c0bf;
+  --color-discord: #5865f2;
+  --color-postit: #e4d7bf;
+  --color-discord-chat: #313338;
+  --color-discord-embed: #2b2d31;
+  --color-discord-server: #1e1f22;
+  --color-discord-text: #dbdee1;
+  --color-discord-heading: #f2f3f5;
+  --color-discord-muted: #aeb4bc;
+  --shadow-card: 0 24px 70px rgb(0 0 0 / 28%);
+  --animate-orbit: orbit 12s ease-in-out infinite alternate;
+  --animate-marquee: marquee 35s linear infinite;
+  --animate-wall-ping: wall-ping 2.6s ease-out infinite;
+  --animate-wall-tip-in: wall-tip-in .22s ease-out;
+}
+
+:root {
+  --page-gutter: clamp(1.25rem, 5vw, 5.5rem);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scrollbar-color: var(--color-primary) var(--color-ink);
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-ink);
+    color: #ffffff;
+    font-family: var(--font-sora), sans-serif;
+    font-size: 1rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 7.2vw, 6rem);
+  }
+
+  h2 {
+    font-size: clamp(2.65rem, 6vw, 5rem);
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+  }
+
+  a,
+  button,
+  input {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 4px;
+  }
+
+  ::selection {
+    background: var(--color-primary);
+    color: var(--color-ink);
+  }
+}
+
+.scene-card,
+.floating-avatar {
+  animation: float 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+.scene-card:nth-child(2),
+.floating-avatar:nth-of-type(2) {
+  animation-delay: -2.4s;
+  animation-duration: 8.5s;
+}
+
+.scene-card:nth-child(3),
+.floating-avatar:nth-of-type(3) {
+  animation-delay: -4.2s;
+  animation-duration: 9s;
+}
+
+@keyframes float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -10px; }
+}
+
+@keyframes orbit {
+  from { transform: rotate(6deg) scale(.98); }
+  to { transform: rotate(11deg) scale(1.03); }
+}
+
+@keyframes marquee {
+  to { transform: translateX(-33.3333%); }
+}
+
+@keyframes wall-ping {
+  0% { opacity: .5; transform: rotate(6deg) scale(.75); }
+  70% { opacity: 0; transform: rotate(6deg) scale(1.25); }
+  100% { opacity: 0; transform: rotate(6deg) scale(1.25); }
+}
+
+@keyframes wall-tip-in {
+  from { opacity: 0; scale: .92; }
+  to { opacity: 1; scale: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
