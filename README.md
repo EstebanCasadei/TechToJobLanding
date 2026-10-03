@@ -49,6 +49,8 @@ El azul pizarra `#263544` reemplaza únicamente los fondos blancos de las seccio
 
 Las tarjetas, los rankings, el formulario y el globo del muro conservan sus superficies blancas originales y su texto oscuro; los testimonios también siguen blancos. Se mantienen los fondos verdes, el gris de marca y los post-its beige. Los títulos y textos que aparecen directamente sobre azul pizarra usan colores claros. No se añadieron recursos, dependencias ni JavaScript.
 
+La cuadrícula queda fija respecto al viewport mediante `background-attachment: fixed`, mientras el contenido se desplaza. Con `prefers-reduced-motion: reduce` vuelve a desplazarse con la sección para evitar el paralaje. Las etiquetas de canales de Networking usan fondo verde y texto oscuro para destacar sobre el azul pizarra. Se verificaron los estilos calculados antes y después del scroll y la variante de movimiento reducido en el navegador de producción.
+
 Comprobaciones locales: `pnpm check`, build estático de producción y revisión responsive a 320, 390, 768, 1440 y 1920 px. Se comprobaron la cuadrícula compartida, las superficies blancas y el foco de los controles. Capturas en `artifacts/slate-backgrounds`. La verificación en móvil real y Lighthouse final en producción siguen pendientes.
 
 ## Recursos y licencias
