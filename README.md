@@ -43,6 +43,14 @@ La grilla usa dos columnas desde 960 px y una columna por debajo. Las tarjetas t
 
 Validación local: lint, tipos, build y navegador de producción en móvil, tablet y escritorio, incluido un ancho equivalente a zoom del 200 %. Capturas en `artifacts/news-grid`. La comprobación en móvil real y la validación final en la URL pública siguen pendientes.
 
+## Fondos oscuros
+
+El azul pizarra `#263544` reemplaza los fondos blancos de secciones, tarjetas y controles, salvo las tarjetas de testimonios, que conservan su blanco original. El color está centralizado en `--color-slate` (`app/global.css`) y se consume mediante Tailwind. Se mantienen los fondos verdes, el gris de marca y los post-its beige para conservar los cambios de color entre secciones.
+
+Los textos, las fechas, los enlaces, el placeholder del email, los bordes y el globo del muro se adaptaron al fondo oscuro. No se sustituyeron recursos ni se añadió JavaScript. La cuadrícula de «Cómo funciona» sigue presente.
+
+Comprobaciones locales: `pnpm check`, build estático de producción, revisión responsive a 320, 390, 768, 1440 y 1920 px y reflujo a 720 px. Se comprobaron los colores calculados y el contraste de los textos sobre los fondos afectados, el foco del formulario y el globo de la comunidad. Capturas en `artifacts/slate-backgrounds`. La verificación en móvil real y Lighthouse final en producción siguen pendientes.
+
 ## Recursos y licencias
 
 | Recurso | Procedencia | Condiciones |
