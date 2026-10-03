@@ -75,7 +75,7 @@ export async function CompaniesSection() {
               </ul>
             </div>
           </div>
-          <div className="scene-card absolute -bottom-1 left-[4%] z-30 w-[78%] -rotate-[2deg] rounded-2xl border border-white/20 bg-slate p-4 text-white shadow-card min-[36rem]:left-[-5%] min-[36rem]:w-[62%]">
+          <div className="scene-card absolute -bottom-1 left-[4%] z-30 w-[78%] -rotate-[2deg] rounded-2xl bg-white p-4 text-ink shadow-card min-[36rem]:left-[-5%] min-[36rem]:w-[62%]">
             <p className="text-sm font-bold">TechToJob · {t("companies.card.replyTime")}</p>
             <p className="mt-1 text-sm">{t("companies.points.context")}</p>
           </div>

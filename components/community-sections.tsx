@@ -13,7 +13,7 @@ export async function NetworkingSection() {
   const t = await getTranslations("networking");
 
   return (
-    <section id="networking" className="relative scroll-mt-24 overflow-hidden bg-slate px-[var(--page-gutter)] py-[clamp(5rem,10vw,9rem)] text-white" aria-labelledby="networking-heading">
+    <section id="networking" className="relative scroll-mt-24 overflow-hidden bg-slate section-grid px-[var(--page-gutter)] py-[clamp(5rem,10vw,9rem)] text-white" aria-labelledby="networking-heading">
       <div className="mx-auto grid max-w-[80rem] gap-16 min-[62rem]:grid-cols-[.8fr_1.2fr] min-[62rem]:items-center">
         <div>
           <h2 id="networking-heading" className="max-w-[13ch] text-balance font-bold leading-[.95] tracking-[-.035em]">{t("title")}</h2>
@@ -90,8 +90,8 @@ export async function NewsletterSection() {
         <form action="#newsletter" className="rounded-2xl bg-ink p-5 text-white shadow-card min-[36rem]:p-7">
           <label className="text-sm font-bold" htmlFor="newsletter-email">{t("label")}</label>
           <div className="mt-3 grid gap-3 min-[36rem]:grid-cols-[1fr_auto]">
-            <input id="newsletter-email" name="email" type="email" autoComplete="email" required placeholder={t("placeholder")} className="min-h-13 min-w-0 rounded-xl border border-white/30 bg-slate px-4 text-base text-white placeholder:text-white/65" />
-            <button type="submit" className={`${fillButtonClasses} min-h-13 cursor-pointer rounded-xl bg-primary px-5 text-sm font-bold text-ink before:bg-slate hover:text-white`}><AnimatedButtonLabel text={t("button")} variant="fill" /></button>
+            <input id="newsletter-email" name="email" type="email" autoComplete="email" required placeholder={t("placeholder")} className="min-h-13 min-w-0 rounded-xl bg-white px-4 text-base text-ink placeholder:text-ink/50" />
+            <button type="submit" className={`${fillButtonClasses} min-h-13 cursor-pointer rounded-xl bg-primary px-5 text-sm font-bold text-ink before:bg-white hover:text-ink`}><AnimatedButtonLabel text={t("button")} variant="fill" /></button>
           </div>
           <p className="mt-3 text-xs text-white/70">{t("note")}</p>
         </form>

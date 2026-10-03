@@ -70,6 +70,14 @@
   }
 }
 
+.section-grid {
+  background-image:
+    linear-gradient(to right, rgba(132, 192, 191, .2) 1px, transparent 2px),
+    linear-gradient(to bottom, rgba(132, 192, 191, .2) 1px, transparent 2px);
+  background-position: center;
+  background-size: 5rem 5rem;
+}
+
 .scene-card,
 .floating-avatar {
   animation: float 7s ease-in-out infinite;

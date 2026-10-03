@@ -45,11 +45,11 @@ Validación local: lint, tipos, build y navegador de producción en móvil, tabl
 
 ## Fondos oscuros
 
-El azul pizarra `#263544` reemplaza los fondos blancos de secciones, tarjetas y controles, salvo las tarjetas de testimonios, que conservan su blanco original. El color está centralizado en `--color-slate` (`app/global.css`) y se consume mediante Tailwind. Se mantienen los fondos verdes, el gris de marca y los post-its beige para conservar los cambios de color entre secciones.
+El azul pizarra `#263544` reemplaza únicamente los fondos blancos de las secciones «Cómo funciona», Networking y Noticias. Todas comparten la misma cuadrícula verde de 5 rem, centrada y definida en `.section-grid` (`app/global.css`). El color está centralizado en `--color-slate` y se consume mediante Tailwind.
 
-Los textos, las fechas, los enlaces, el placeholder del email, los bordes y el globo del muro se adaptaron al fondo oscuro. No se sustituyeron recursos ni se añadió JavaScript. La cuadrícula de «Cómo funciona» sigue presente.
+Las tarjetas, los rankings, el formulario y el globo del muro conservan sus superficies blancas originales y su texto oscuro; los testimonios también siguen blancos. Se mantienen los fondos verdes, el gris de marca y los post-its beige. Los títulos y textos que aparecen directamente sobre azul pizarra usan colores claros. No se añadieron recursos, dependencias ni JavaScript.
 
-Comprobaciones locales: `pnpm check`, build estático de producción, revisión responsive a 320, 390, 768, 1440 y 1920 px y reflujo a 720 px. Se comprobaron los colores calculados y el contraste de los textos sobre los fondos afectados, el foco del formulario y el globo de la comunidad. Capturas en `artifacts/slate-backgrounds`. La verificación en móvil real y Lighthouse final en producción siguen pendientes.
+Comprobaciones locales: `pnpm check`, build estático de producción y revisión responsive a 320, 390, 768, 1440 y 1920 px. Se comprobaron la cuadrícula compartida, las superficies blancas y el foco de los controles. Capturas en `artifacts/slate-backgrounds`. La verificación en móvil real y Lighthouse final en producción siguen pendientes.
 
 ## Recursos y licencias
 

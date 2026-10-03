@@ -23,7 +23,7 @@ function Navigation({ t, mobile = false }: Readonly<{ t: Translate; mobile?: boo
           <a
             href={href}
             className={mobile
-              ? "block rounded-xl px-4 py-3 text-base font-bold transition-colors hover:bg-slate hover:text-primary"
+              ? "block rounded-xl px-4 py-3 text-base font-bold transition-colors hover:bg-white/8 hover:text-primary"
               : "text-sm font-bold transition-colors hover:text-primary"}
           >
             {t(`navigation.${key}`)}
