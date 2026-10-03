@@ -1,3 +1,8 @@
+export const author = {
+  name: "Esteban Casadei",
+  linkedin: "https://www.linkedin.com/in/esteban-casadei-087553357/",
+} as const;
+
 export const site = {
   name: "TechToJob",
   discord: "https://discord.gg/h9FFgKdkRd",
