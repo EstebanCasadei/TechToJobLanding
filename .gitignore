@@ -16,3 +16,4 @@ yarn-error.log*
 Thumbs.db
 *.pem
 AGENTS.md
+/artifacts/

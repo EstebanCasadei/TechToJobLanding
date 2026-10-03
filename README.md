@@ -41,7 +41,7 @@ Para publicar cambios: edita el JSON, comprueba `pnpm check` y `pnpm build`, y h
 
 La grilla usa dos columnas desde 960 px y una columna por debajo. Las tarjetas tienen encabezados semánticos, fechas con `<time>`, enlaces descriptivos y una imagen optimizada con `next/image` y carga diferida. No incorpora JavaScript de cliente. Los datos se comprueban contra tipos TypeScript.
 
-Validación local: lint, tipos, build y navegador de producción en móvil, tablet y escritorio, incluido un ancho equivalente a zoom del 200 %. Capturas en `artifacts/news-grid`. La comprobación en móvil real y la validación final en la URL pública siguen pendientes.
+Validación local: lint, tipos, build y navegador de producción en móvil, tablet y escritorio, incluido un ancho equivalente a zoom del 200 %. La comprobación en móvil real y la validación final en la URL pública siguen pendientes.
 
 ## Fondos oscuros
 
@@ -53,7 +53,11 @@ Cada sección con cuadrícula incorpora degradados negros al 50 % desde el borde
 
 La cuadrícula y los degradados se desplazan con la sección mediante `background-attachment: scroll`, sin efecto de paralaje. Las etiquetas de canales de Networking usan fondo verde y texto oscuro para destacar sobre el gris de fondo. Se verificaron los estilos calculados de las capas de fondo en el navegador de producción.
 
-Comprobaciones locales: `pnpm check`, build estático de producción y revisión responsive a 320, 390, 768, 1440 y 1920 px. Se comprobaron la cuadrícula compartida, las superficies blancas y el foco de los controles. Capturas en `artifacts/slate-backgrounds`. La verificación en móvil real y Lighthouse final en producción siguen pendientes.
+Comprobaciones locales: `pnpm check`, build estático de producción y revisión responsive a 320, 390, 768, 1440 y 1920 px. Se comprobaron la cuadrícula compartida, las superficies blancas y el foco de los controles. La verificación en móvil real y Lighthouse final en producción siguen pendientes.
+
+## Verificación sin capturas
+
+Por decisión del propietario, no se toman ni se guardan capturas de pantalla, tampoco durante las comprobaciones de navegador. Las verificaciones se documentan mediante resultados de comandos y observaciones. No se incluyen archivos de `artifacts` en el repositorio.
 
 ## Recursos y licencias
 
