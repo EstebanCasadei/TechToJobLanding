@@ -13,13 +13,13 @@ export async function NetworkingSection() {
   const t = await getTranslations("networking");
 
   return (
-    <section id="networking" className="relative scroll-mt-24 overflow-hidden bg-white px-[var(--page-gutter)] py-[clamp(5rem,10vw,9rem)] text-ink" aria-labelledby="networking-heading">
+    <section id="networking" className="relative scroll-mt-24 overflow-hidden bg-slate section-grid px-[var(--page-gutter)] py-[clamp(5rem,10vw,9rem)] text-white" aria-labelledby="networking-heading">
       <div className="mx-auto grid max-w-[80rem] gap-16 min-[62rem]:grid-cols-[.8fr_1.2fr] min-[62rem]:items-center">
         <div>
           <h2 id="networking-heading" className="max-w-[13ch] text-balance font-bold leading-[.95] tracking-[-.035em]">{t("title")}</h2>
-          <p className="mt-6 max-w-[48ch] text-lg leading-relaxed text-ink/68">{t("intro")}</p>
+          <p className="mt-6 max-w-[48ch] text-lg leading-relaxed text-white/80">{t("intro")}</p>
           <div className="mt-8 flex flex-wrap gap-2">
-            {channelKeys.map((key) => <span key={key} className="rounded-full bg-ink px-4 py-2 text-xs font-bold text-primary">{t(`channels.${key}`)}</span>)}
+            {channelKeys.map((key) => <span key={key} className="rounded-full bg-primary px-4 py-2 text-xs font-bold text-ink">{t(`channels.${key}`)}</span>)}
           </div>
         </div>
 
@@ -28,10 +28,10 @@ export async function NetworkingSection() {
           <div className="scene-card absolute left-[3%] top-[5%] z-20 w-[75%] -rotate-[2deg] rounded-2xl bg-ink p-5 text-white shadow-card">
             <div className="flex gap-3"><CommunityAvatar name="Question person" size={44} className="size-11 shrink-0" /><p className="text-sm leading-relaxed"><strong>{t("messages.authors.question")}</strong><br />{t("messages.question")}</p></div>
           </div>
-          <div className="scene-card absolute right-[1%] top-[36%] z-30 w-[73%] rotate-[2deg] rounded-2xl bg-primary p-5 shadow-card">
+          <div className="scene-card absolute right-[1%] top-[36%] z-30 w-[73%] rotate-[2deg] rounded-2xl bg-primary p-5 text-ink shadow-card">
             <div className="flex gap-3"><CommunityAvatar name="Answerperson2" size={44} className="size-11 shrink-0" /><p className="text-sm leading-relaxed"><strong>{t("messages.authors.answer")}</strong><br />{t("messages.answer")}</p></div>
           </div>
-          <div className="scene-card absolute bottom-[3%] left-[8%] z-20 w-[82%] -rotate-[1deg] rounded-2xl bg-postit p-5 shadow-card">
+          <div className="scene-card absolute bottom-[3%] left-[8%] z-20 w-[82%] -rotate-[1deg] rounded-2xl bg-postit p-5 text-ink shadow-card">
             <div className="flex gap-3"><CommunityAvatar name="Opportunity person" size={44} className="size-11 shrink-0" /><p className="text-sm leading-relaxed"><strong>{t("messages.authors.opportunity")}</strong><br />{t("messages.opportunity")}</p></div>
           </div>
           {['frontend node', 'data node', 'security node'].map((name, index) => <CommunityAvatar key={name} name={name} size={62} className={`floating-avatar absolute z-40 size-16 drop-shadow-xl ${index === 0 ? "right-[8%] top-[5%]" : index === 1 ? "left-[1%] top-[44%]" : "right-[3%] bottom-[2%]"}`} />)}
