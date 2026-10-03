@@ -129,7 +129,7 @@ export async function SiteFooter() {
   const t = await getTranslations("footer");
 
   return (
-    <footer className="border-t border-white/10 bg-ink px-[var(--page-gutter)] py-12 text-white">
+    <footer className="border-t border-white/10 bg-ink px-[var(--page-gutter)] pt-12 pb-[calc(6rem+env(safe-area-inset-bottom))] text-white">
       <div className="mx-auto grid max-w-[80rem] gap-10 min-[52rem]:grid-cols-[1.2fr_repeat(4,1fr)]">
         <div><div className="flex items-center gap-3"><Image src="/images/brand-mark.svg" alt="" width={44} height={44} className="size-11" /><span className="text-xl font-bold">TechToJob</span></div><p className="mt-4 max-w-[28ch] text-sm leading-relaxed text-white/70">{t("description")}</p></div>
         <div><h2 className="text-sm font-bold">{t("talent")}</h2><ul className="mt-4 grid gap-3 text-sm text-white/62"><li><a href="#talent" className="hover:text-primary">Perfiles</a></li><li><a href="#tournaments" className="hover:text-primary">Torneos</a></li></ul></div>
