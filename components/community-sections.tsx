@@ -19,7 +19,7 @@ export async function NetworkingSection() {
           <h2 id="networking-heading" className="max-w-[13ch] text-balance font-bold leading-[.95] tracking-[-.035em]">{t("title")}</h2>
           <p className="mt-6 max-w-[48ch] text-lg leading-relaxed text-white/80">{t("intro")}</p>
           <div className="mt-8 flex flex-wrap gap-2">
-            {channelKeys.map((key) => <span key={key} className="rounded-full bg-ink px-4 py-2 text-xs font-bold text-primary">{t(`channels.${key}`)}</span>)}
+            {channelKeys.map((key) => <span key={key} className="rounded-full bg-primary px-4 py-2 text-xs font-bold text-ink">{t(`channels.${key}`)}</span>)}
           </div>
         </div>
 

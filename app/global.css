@@ -71,6 +71,7 @@
 }
 
 .section-grid {
+  background-attachment: fixed;
   background-image:
     linear-gradient(to right, rgba(132, 192, 191, .2) 1px, transparent 2px),
     linear-gradient(to bottom, rgba(132, 192, 191, .2) 1px, transparent 2px);
@@ -122,6 +123,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .section-grid {
+    background-attachment: scroll;
+  }
+
   html {
     scroll-behavior: auto;
   }
