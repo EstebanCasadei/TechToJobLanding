@@ -218,43 +218,6 @@
       }
     ]
   },
-  "news": {
-    "title": "Lo último en la comunidad",
-    "articleLabel": "Artículo",
-    "items": [
-      {
-        "title": "Ya tenemos landing: Esteban Casadei gana el torneo",
-        "date": "2026-09-25",
-        "dateLabel": "25 sep 2026",
-        "category": "Torneos",
-        "summary": "Su propuesta ganó el reto de diseñar y construir esta página, y se convierte en la landing oficial de TechToJob.",
-        "links": [
-          { "label": "LinkedIn de Esteban", "url": "https://www.linkedin.com/in/esteban-casadei-087553357/" }
-        ]
-      },
-      {
-        "title": "Nuestro primer video ya está en TikTok e Instagram",
-        "date": "2026-09-15",
-        "dateLabel": "15 sep 2026",
-        "category": "Comunidad",
-        "summary": "Anuncio del torneo en curso: el reto que decidirá la landing oficial de la comunidad, contado en video.",
-        "links": [
-          { "label": "Ver en TikTok", "network": "tiktok" },
-          { "label": "Ver en Instagram", "network": "instagram" }
-        ]
-      },
-      {
-        "title": "Ya tenemos logo: Pablo Exposito gana el torneo de identidad",
-        "date": "2026-09-03",
-        "dateLabel": "3 sep 2026",
-        "category": "Torneos",
-        "summary": "El reto del 3 de septiembre decidió la identidad visual de la comunidad. La propuesta ganadora es de Pablo Exposito (@novision_studio).",
-        "links": [
-          { "label": "LinkedIn de Pablo", "url": "https://www.linkedin.com/in/pablo-exposito-23576a376/" }
-        ]
-      }
-    ]
-  },
   "newsletter": {
     "title": "Infórmate de las novedades de la comunidad.",
     "description": "Recibe una selección mensual de torneos, proyectos, conversaciones y oportunidades compartidas en la comunidad.",
