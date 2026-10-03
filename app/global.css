@@ -3,7 +3,7 @@
 @theme inline {
   --font-sans: var(--font-sora);
   --color-ink: #2f3436;
-  --color-slate: #263544;
+  --color-slate: #3b4245;
   --color-primary: #84c0bf;
   --color-discord: #5865f2;
   --color-postit: #e4d7bf;
@@ -71,12 +71,19 @@
 }
 
 .section-grid {
-  background-attachment: fixed;
+  background-attachment: scroll, scroll, fixed, fixed;
   background-image:
+    linear-gradient(to bottom, rgb(0 0 0 / 50%), transparent),
+    linear-gradient(to top, rgb(0 0 0 / 50%), transparent),
     linear-gradient(to right, rgba(132, 192, 191, .2) 1px, transparent 2px),
     linear-gradient(to bottom, rgba(132, 192, 191, .2) 1px, transparent 2px);
-  background-position: center;
-  background-size: 5rem 5rem;
+  background-position: top, bottom, center, center;
+  background-repeat: no-repeat, no-repeat, repeat, repeat;
+  background-size:
+    100% clamp(4rem, 8vw, 8rem),
+    100% clamp(4rem, 8vw, 8rem),
+    5rem 5rem,
+    5rem 5rem;
 }
 
 .scene-card,
