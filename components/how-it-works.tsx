@@ -7,18 +7,18 @@ import { site } from "@/lib/site";
 const steps = [
   { id: "join", items: ["channels", "introduction", "project"], tone: "bg-postit text-ink", rotate: "-rotate-[1.5deg]" },
   { id: "participate", items: ["challenge", "build", "feedback"], tone: "bg-ink text-white", rotate: "rotate-[1.2deg]" },
-  { id: "connect", items: ["messages", "work", "fit"], tone: "bg-white text-ink", rotate: "-rotate-[.8deg]" },
+  { id: "connect", items: ["messages", "work", "fit"], tone: "bg-slate text-white border border-white/20", rotate: "-rotate-[.8deg]" },
 ] as const;
 
 export async function HowItWorks() {
   const t = await getTranslations("howItWorks");
 
   return (
-    <section id="how-it-works" className="relative scroll-mt-24 overflow-hidden bg-white bg-center [background-image:linear-gradient(to_right,rgba(132,192,191,.2)_1px,transparent_2px),linear-gradient(to_bottom,rgba(132,192,191,.2)_1px,transparent_2px)] [background-size:5rem_5rem] px-[var(--page-gutter)] py-[clamp(5rem,10vw,9rem)] text-ink" aria-labelledby="how-it-works-heading">
+    <section id="how-it-works" className="relative scroll-mt-24 overflow-hidden bg-slate bg-center [background-image:linear-gradient(to_right,rgba(132,192,191,.2)_1px,transparent_2px),linear-gradient(to_bottom,rgba(132,192,191,.2)_1px,transparent_2px)] [background-size:5rem_5rem] px-[var(--page-gutter)] py-[clamp(5rem,10vw,9rem)] text-white" aria-labelledby="how-it-works-heading">
       <div className="mx-auto max-w-[80rem]">
         <header className="max-w-[60rem]">
           <h2 id="how-it-works-heading" className="text-balance font-bold leading-[.98] tracking-[-.035em]">{t("title")}</h2>
-          <p className="mt-5 max-w-[50ch] text-lg font-bold text-ink/80">{t("subtitle")}</p>
+          <p className="mt-5 max-w-[50ch] text-lg font-bold text-white/80">{t("subtitle")}</p>
         </header>
 
         <ol className="relative mt-16 grid gap-12 min-[56rem]:gap-20">

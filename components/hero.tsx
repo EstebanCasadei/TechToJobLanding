@@ -59,17 +59,17 @@ export async function Hero() {
 
       <div className="relative mx-auto mt-16 min-h-[31rem] w-full max-w-[39rem] min-[64rem]:mt-0">
         <p className="sr-only">{t("hero.activity.status")}</p>
-        <div className="scene-card absolute left-[3%] top-[4%] z-20 w-[72%] -rotate-[4deg] rounded-2xl bg-white p-5 text-ink shadow-card">
+        <div className="scene-card absolute left-[3%] top-[4%] z-20 w-[72%] -rotate-[4deg] rounded-2xl border border-white/20 bg-slate p-5 text-white shadow-card">
           <div className="flex items-center gap-3">
             <CommunityAvatar name="Alex R frontend" size={52} className="size-13 shrink-0" />
             <div>
               <p className="text-sm font-bold">{t("profile.name")}</p>
-              <p className="text-xs text-ink/80">{t("profile.role")}</p>
+              <p className="text-xs text-white/80">{t("profile.role")}</p>
             </div>
             <span className="ml-auto size-2.5 rounded-full bg-primary" aria-hidden="true" />
           </div>
           <div className="mt-5 grid gap-2 text-sm">
-            <p className="rounded-xl bg-ink/6 px-3 py-2">React · TypeScript · Next.js</p>
+            <p className="rounded-xl bg-white/10 px-3 py-2">React · TypeScript · Next.js</p>
             <p className="rounded-xl bg-primary/30 px-3 py-2 font-bold">{t("profile.strengths.project")}</p>
           </div>
         </div>

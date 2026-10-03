@@ -3,6 +3,7 @@
 @theme inline {
   --font-sans: var(--font-sora);
   --color-ink: #2f3436;
+  --color-slate: #263544;
   --color-primary: #84c0bf;
   --color-discord: #5865f2;
   --color-postit: #e4d7bf;

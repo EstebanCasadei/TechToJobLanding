@@ -375,7 +375,7 @@ export function CommunityWall({ members, hint, wallLabel, spot, discord }: Props
         onClick={openSpot}
       />
       {spotOpen && (
-        <div className="absolute z-30 flex max-w-[min(15rem,80vw)] -translate-x-1/2 -translate-y-[calc(100%_+_14px)] rotate-[-1deg] animate-wall-tip-in flex-col items-start gap-2.5 rounded-2xl bg-white px-3.5 py-4 text-left text-ink shadow-card after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-7 after:border-transparent after:border-t-white after:content-['']" style={{ left: spotOpen.x, top: spotOpen.y }}>
+        <div className="absolute z-30 flex max-w-[min(15rem,80vw)] -translate-x-1/2 -translate-y-[calc(100%_+_14px)] rotate-[-1deg] animate-wall-tip-in flex-col items-start gap-2.5 rounded-2xl border border-white/20 bg-slate px-3.5 py-4 text-left text-white shadow-card after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-7 after:border-transparent after:border-t-slate after:content-['']" style={{ left: spotOpen.x, top: spotOpen.y }}>
           <strong className="block text-sm leading-snug">{spot.title}</strong>
           <a href={discord} className="group/action relative mt-2 inline-flex min-h-10 items-center overflow-hidden rounded-full bg-primary px-4 text-xs font-bold text-ink mx-auto">
             <AnimatedButtonLabel text={spot.cta} />

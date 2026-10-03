@@ -24,28 +24,28 @@ export async function TournamentsSection() {
             <p className="absolute right-0 top-0 z-30 w-36 rotate-[4deg] text-right text-xs font-bold leading-tight text-primary min-[40rem]:w-40 min-[40rem]:text-sm min-[80rem]:w-48 min-[80rem]:text-base">{t("meta")}</p>
             <Image src="/images/arrow4.svg" alt="" width={20} height={23} className="absolute right-[16%] top-[3rem] z-20 h-6 w-auto rotate-[200deg] min-[40rem]:right-[20%] min-[40rem]:top-12 min-[40rem]:h-7 min-[80rem]:right-[22%] min-[80rem]:top-14" />
 
-            <article data-swing-card className="absolute left-1/2 top-20 z-20 w-[min(76%,19rem)] -translate-x-1/2 -rotate-[2deg] rounded-2xl bg-white p-5 text-ink shadow-card min-[40rem]:top-16">
+            <article data-swing-card className="absolute left-1/2 top-20 z-20 w-[min(76%,19rem)] -translate-x-1/2 -rotate-[2deg] rounded-2xl border border-white/20 bg-slate p-5 text-white shadow-card min-[40rem]:top-16">
               <Image src="/images/pin.svg" alt="" width={32} height={36} data-swing-pin className="absolute -top-5 left-1/2 h-9 w-auto -translate-x-1/2" />
               <div className="flex items-center justify-between gap-3">
-                <p className="text-xs font-bold uppercase tracking-[.14em] text-ink/75">{t("winner")}</p>
-                <span className="rounded-full bg-primary px-2.5 py-1 text-xs font-bold">#1</span>
+                <p className="text-xs font-bold uppercase tracking-[.14em] text-white/75">{t("winner")}</p>
+                <span className="rounded-full bg-primary px-2.5 py-1 text-xs font-bold text-ink">#1</span>
               </div>
               <div className="mt-5 space-y-2" aria-hidden="true">
-                <span className="block h-2.5 w-4/5 rounded-full bg-ink/80" />
-                <span className="block h-2.5 w-3/5 rounded-full bg-ink/35" />
+                <span className="block h-2.5 w-4/5 rounded-full bg-white/80" />
+                <span className="block h-2.5 w-3/5 rounded-full bg-white/35" />
                 <span className="block h-2 w-1/2 rounded-full bg-primary" />
               </div>
-              <p className="mt-5 text-sm leading-relaxed text-ink/75">{t("winnerDescription")}</p>
+              <p className="mt-5 text-sm leading-relaxed text-white/75">{t("winnerDescription")}</p>
             </article>
 
             <div className="absolute inset-x-0 bottom-14 flex items-end justify-center gap-[clamp(.6rem,2.5vw,1.25rem)]">
-              <div className="podium-step relative h-36 w-[27%] max-w-44 rotate-[-1deg] rounded-t-2xl bg-white/8 shadow-card">
+              <div className="podium-step relative h-36 w-[27%] max-w-44 rotate-[-1deg] rounded-t-2xl bg-slate shadow-card">
                 <span className="absolute inset-0 flex items-center justify-center text-[clamp(2.5rem,6vw,4.5rem)] font-bold text-primary/70">2</span>
               </div>
               <div className="podium-step relative h-56 w-[32%] max-w-52 rotate-[.7deg] rounded-t-2xl bg-primary shadow-card">
                 <span className="absolute inset-x-0 bottom-7 text-center text-[clamp(3.5rem,8vw,6rem)] font-bold leading-none text-ink">1</span>
               </div>
-              <div className="podium-step relative h-28 w-[25%] max-w-40 rotate-[1.4deg] rounded-t-2xl bg-white/8 shadow-card">
+              <div className="podium-step relative h-28 w-[25%] max-w-40 rotate-[1.4deg] rounded-t-2xl bg-slate shadow-card">
                 <span className="absolute inset-0 flex items-center justify-center text-[clamp(2rem,5vw,3.75rem)] font-bold text-primary/70">3</span>
               </div>
             </div>
