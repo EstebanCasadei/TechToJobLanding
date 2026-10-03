@@ -51,7 +51,7 @@ Las tarjetas, los rankings, el formulario y el globo del muro conservan sus supe
 
 Cada sección con cuadrícula incorpora degradados negros al 50 % desde el borde superior e inferior hacia el interior. Su profundidad se adapta entre 4 y 8 rem y permanece unida a la sección, sin cubrir el contenido.
 
-La cuadrícula queda fija respecto al viewport mediante `background-attachment: fixed`, mientras el contenido se desplaza. Con `prefers-reduced-motion: reduce` vuelve a desplazarse con la sección para evitar el paralaje. Las etiquetas de canales de Networking usan fondo verde y texto oscuro para destacar sobre el gris de fondo. Se verificaron los estilos calculados antes y después del scroll y la variante de movimiento reducido en el navegador de producción.
+La cuadrícula y los degradados se desplazan con la sección mediante `background-attachment: scroll`, sin efecto de paralaje. Las etiquetas de canales de Networking usan fondo verde y texto oscuro para destacar sobre el gris de fondo. Se verificaron los estilos calculados de las capas de fondo en el navegador de producción.
 
 Comprobaciones locales: `pnpm check`, build estático de producción y revisión responsive a 320, 390, 768, 1440 y 1920 px. Se comprobaron la cuadrícula compartida, las superficies blancas y el foco de los controles. Capturas en `artifacts/slate-backgrounds`. La verificación en móvil real y Lighthouse final en producción siguen pendientes.
 
