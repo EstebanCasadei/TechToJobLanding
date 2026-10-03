@@ -1,10 +1,10 @@
+import { NewsSection } from "@/components/news-section";
 import { getTranslations } from "next-intl/server";
 import { CompaniesSection, TalentSection } from "@/components/audience-sides";
 import {
   ClosingSection,
   NetworkingSection,
   NewsletterSection,
-  NewsSection,
   SiteFooter,
   TestimonialsSection,
 } from "@/components/community-sections";

@@ -6,10 +6,6 @@ import { LazyCommunityWall } from "@/components/lazy-community-wall";
 import { site } from "@/lib/site";
 
 type Testimonial = { name: string; role: string; quote: string; photoUrl?: string; profileUrl?: string };
-type NewsLink =
-  | { label: string; network: "discord" | "linkedin" | "x" | "instagram" | "tiktok" }
-  | { label: string; url: string };
-type NewsItem = { title: string; date: string; dateLabel: string; category: string; summary: string; links?: NewsLink[] };
 
 const channelKeys = ["development", "networking", "jobs", "forum"] as const;
 
@@ -77,29 +73,6 @@ export async function TestimonialsSection() {
                 </article>
               ))}
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export async function NewsSection() {
-  const t = await getTranslations();
-  const items = t.raw("news.items") as NewsItem[];
-
-  return (
-    <section className="bg-white px-[var(--page-gutter)] py-[clamp(5rem,10vw,9rem)] text-ink" aria-labelledby="news-heading">
-      <div className="mx-auto max-w-[80rem]">
-        <h2 id="news-heading" className="font-bold leading-none tracking-[-.035em]">{t("news.title")}</h2>
-        <div className="mt-12 divide-y divide-ink/15 border-y border-ink/15">
-          {items.map((item, index) => (
-            <article key={item.title} className="group grid gap-4 py-8 min-[48rem]:grid-cols-[8rem_1fr_auto] min-[48rem]:items-start min-[48rem]:gap-8">
-              <div><p className="text-xs font-bold uppercase tracking-[.16em] text-ink/75">{item.category}</p><time className="mt-2 block text-sm" dateTime={item.date}>{item.dateLabel}</time></div>
-              <div><h3 className="max-w-[29ch] text-[clamp(1.35rem,2.5vw,2.2rem)] font-bold leading-tight tracking-[-.025em]">{item.title}</h3><p className="mt-3 max-w-[65ch] leading-relaxed text-ink/80">{item.summary}</p>{item.links && <ul className="mt-4 flex flex-wrap gap-2">{item.links.map((link) => <li key={"url" in link ? link.url : link.network}><a href={"url" in link ? link.url : site[link.network]} className={`${fillButtonClasses} inline-flex rounded-full bg-ink px-4 py-2 text-xs font-bold text-primary before:bg-primary hover:text-ink`}><AnimatedButtonLabel text={link.label} variant="fill" /></a></li>)}</ul>}</div>
-              <span className="hidden size-12 items-center justify-center rounded-full bg-primary text-xl font-bold transition-transform group-hover:rotate-45 min-[48rem]:flex" aria-hidden="true">↗</span>
-              <span className="sr-only">{t("news.articleLabel")} {index + 1}</span>
-            </article>
           ))}
         </div>
       </div>
