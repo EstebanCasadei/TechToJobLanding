@@ -45,11 +45,13 @@ Validación local: lint, tipos, build y navegador de producción en móvil, tabl
 
 ## Fondos oscuros
 
-El azul pizarra `#263544` reemplaza únicamente los fondos blancos de las secciones «Cómo funciona», Networking y Noticias. Todas comparten la misma cuadrícula verde de 5 rem, centrada y definida en `.section-grid` (`app/global.css`). El color está centralizado en `--color-slate` y se consume mediante Tailwind.
+El gris claro de fondo `#3b4245` reemplaza únicamente los fondos blancos de las secciones «Cómo funciona», Networking y Noticias. Todas comparten la misma cuadrícula verde de 5 rem, centrada y definida en `.section-grid` (`app/global.css`). El color está centralizado en `--color-slate` y se consume mediante Tailwind.
 
-Las tarjetas, los rankings, el formulario y el globo del muro conservan sus superficies blancas originales y su texto oscuro; los testimonios también siguen blancos. Se mantienen los fondos verdes, el gris de marca y los post-its beige. Los títulos y textos que aparecen directamente sobre azul pizarra usan colores claros. No se añadieron recursos, dependencias ni JavaScript.
+Las tarjetas, los rankings, el formulario y el globo del muro conservan sus superficies blancas originales y su texto oscuro; los testimonios también siguen blancos. Se mantienen los fondos verdes, el gris de marca y los post-its beige. Los títulos y textos que aparecen directamente sobre el gris de fondo usan colores claros. No se añadieron recursos, dependencias ni JavaScript.
 
-La cuadrícula queda fija respecto al viewport mediante `background-attachment: fixed`, mientras el contenido se desplaza. Con `prefers-reduced-motion: reduce` vuelve a desplazarse con la sección para evitar el paralaje. Las etiquetas de canales de Networking usan fondo verde y texto oscuro para destacar sobre el azul pizarra. Se verificaron los estilos calculados antes y después del scroll y la variante de movimiento reducido en el navegador de producción.
+Cada sección con cuadrícula incorpora degradados negros al 50 % desde el borde superior e inferior hacia el interior. Su profundidad se adapta entre 4 y 8 rem y permanece unida a la sección, sin cubrir el contenido.
+
+La cuadrícula queda fija respecto al viewport mediante `background-attachment: fixed`, mientras el contenido se desplaza. Con `prefers-reduced-motion: reduce` vuelve a desplazarse con la sección para evitar el paralaje. Las etiquetas de canales de Networking usan fondo verde y texto oscuro para destacar sobre el gris de fondo. Se verificaron los estilos calculados antes y después del scroll y la variante de movimiento reducido en el navegador de producción.
 
 Comprobaciones locales: `pnpm check`, build estático de producción y revisión responsive a 320, 390, 768, 1440 y 1920 px. Se comprobaron la cuadrícula compartida, las superficies blancas y el foco de los controles. Capturas en `artifacts/slate-backgrounds`. La verificación en móvil real y Lighthouse final en producción siguen pendientes.
 
