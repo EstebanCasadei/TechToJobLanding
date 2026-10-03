@@ -41,7 +41,11 @@ Para publicar cambios: edita el JSON, comprueba `pnpm check` y `pnpm build`, y h
 
 La grilla usa dos columnas desde 960 px y una columna por debajo. Las tarjetas tienen encabezados semánticos, fechas con `<time>`, enlaces descriptivos y una imagen optimizada con `next/image` y carga diferida. No incorpora JavaScript de cliente. Los datos se comprueban contra tipos TypeScript.
 
-Validación local: lint, tipos, build y navegador de producción en móvil, tablet y escritorio, incluido un ancho equivalente a zoom del 200 %. Capturas en `artifacts/news-grid`. La comprobación en móvil real y la validación final en la URL pública siguen pendientes.
+Validación local: lint, tipos, build y navegador de producción en móvil, tablet y escritorio, incluido un ancho equivalente a zoom del 200 %. La comprobación en móvil real y la validación final en la URL pública siguen pendientes.
+
+## Verificación sin capturas
+
+Por decisión del propietario, no se toman ni se guardan capturas de pantalla, tampoco durante las comprobaciones de navegador. Las verificaciones se documentan mediante resultados de comandos y observaciones. No se incluyen archivos de `artifacts` en el repositorio.
 
 ## Recursos y licencias
 
