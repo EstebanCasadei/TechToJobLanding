@@ -73,10 +73,10 @@
 .section-grid {
   background-attachment: scroll;
   background-image:
-    linear-gradient(to bottom, rgb(0 0 0 / 50%), transparent),
-    linear-gradient(to top, rgb(0 0 0 / 50%), transparent),
-    linear-gradient(to right, rgba(132, 192, 191, .2) 1px, transparent 2px),
-    linear-gradient(to bottom, rgba(132, 192, 191, .2) 1px, transparent 2px);
+    linear-gradient(to bottom, rgb(0 0 0 / 25%), transparent),
+    linear-gradient(to top, rgb(0 0 0 / 25%), transparent),
+    linear-gradient(to right, rgba(132, 192, 191, .1) 1px, transparent 2px),
+    linear-gradient(to bottom, rgba(132, 192, 191, .1) 1px, transparent 2px);
   background-position: top, bottom, center, center;
   background-repeat: no-repeat, no-repeat, repeat, repeat;
   background-size:

@@ -49,7 +49,7 @@ El gris claro de fondo `#3b4245` reemplaza únicamente los fondos blancos de las
 
 Las tarjetas, los rankings, el formulario y el globo del muro conservan sus superficies blancas originales y su texto oscuro; los testimonios también siguen blancos. Se mantienen los fondos verdes, el gris de marca y los post-its beige. Los títulos y textos que aparecen directamente sobre el gris de fondo usan colores claros. No se añadieron recursos, dependencias ni JavaScript.
 
-Cada sección con cuadrícula incorpora degradados negros al 50 % desde el borde superior e inferior hacia el interior. Su profundidad se adapta entre 4 y 8 rem y permanece unida a la sección, sin cubrir el contenido.
+Cada sección con cuadrícula incorpora degradados negros al 25 % desde el borde superior e inferior hacia el interior. Su profundidad se adapta entre 4 y 8 rem y permanece unida a la sección, sin cubrir el contenido.
 
 La cuadrícula y los degradados se desplazan con la sección mediante `background-attachment: scroll`, sin efecto de paralaje. Las etiquetas de canales de Networking usan fondo verde y texto oscuro para destacar sobre el gris de fondo. Se verificaron los estilos calculados de las capas de fondo en el navegador de producción.
 
