@@ -1,0 +1,33 @@
+"use client";
+
+import { useRef } from "react";
+
+export function NewsLink({ href, label }: Readonly<{ href: string; label: string }>) {
+  const labelRef = useRef<HTMLSpanElement>(null);
+
+  const animateUnderline = () => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    labelRef.current?.classList.add("is-animating");
+  };
+
+  return (
+    <a
+      href={href}
+      className="inline-flex min-h-11 items-center text-sm font-bold text-ink [overflow-wrap:anywhere]"
+      onPointerEnter={(event) => {
+        if (event.pointerType !== "touch") animateUnderline();
+      }}
+      onFocus={(event) => {
+        if (event.currentTarget.matches(":focus-visible")) animateUnderline();
+      }}
+    >
+      <span
+        ref={labelRef}
+        className="news-link-label"
+        onAnimationEnd={(event) => event.currentTarget.classList.remove("is-animating")}
+      >
+        {label}
+      </span>
+    </a>
+  );
+}
