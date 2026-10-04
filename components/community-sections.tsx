@@ -4,6 +4,7 @@ import { AnimatedButtonLabel, fillButtonClasses } from "@/components/animated-bu
 import { CommunityAvatar } from "@/components/community-avatar";
 import { LazyCommunityWall } from "@/components/lazy-community-wall";
 import { site } from "@/lib/site";
+import { NewsletterAvatar } from "@/components/newsletter-avatar";
 
 type Testimonial = { name: string; role: string; quote: string; photoUrl?: string; profileUrl?: string };
 
@@ -87,14 +88,16 @@ export async function NewsletterSection() {
     <section id="newsletter" className="bg-primary px-[var(--page-gutter)] py-[clamp(4rem,8vw,7rem)] text-ink" aria-labelledby="newsletter-heading">
       <div className="mx-auto grid max-w-[80rem] gap-10 min-[58rem]:grid-cols-[1fr_1fr] min-[58rem]:items-end">
         <div><h2 id="newsletter-heading" className="max-w-[13ch] text-balance font-bold tracking-[-.035em]">{t("title")}</h2><p className="mt-5 max-w-[52ch] text-lg leading-relaxed text-ink/85">{t("description")}</p></div>
-        <form action="#newsletter" className="rounded-2xl bg-ink p-5 text-white shadow-card min-[36rem]:p-7">
-          <label className="text-sm font-bold" htmlFor="newsletter-email">{t("label")}</label>
-          <div className="mt-3 grid gap-3 min-[36rem]:grid-cols-[1fr_auto]">
-            <input id="newsletter-email" name="email" type="email" autoComplete="email" required placeholder={t("placeholder")} className="min-h-13 min-w-0 rounded-xl bg-white px-4 text-base text-ink placeholder:text-ink/50" />
-            <button type="submit" className={`${fillButtonClasses} min-h-13 cursor-pointer rounded-xl bg-primary px-5 text-sm font-bold text-ink before:bg-white hover:text-ink`}><AnimatedButtonLabel text={t("button")} variant="fill" /></button>
-          </div>
-          <p className="mt-3 text-xs text-white/70">{t("note")}</p>
-        </form>
+        <NewsletterAvatar>
+          <form action="#newsletter" className="relative rounded-2xl bg-ink p-5 text-white shadow-card min-[36rem]:p-7">
+            <label className="text-sm font-bold" htmlFor="newsletter-email">{t("label")}</label>
+            <div className="mt-3 grid gap-3 min-[36rem]:grid-cols-[1fr_auto]">
+              <input id="newsletter-email" name="email" type="email" autoComplete="email" required placeholder={t("placeholder")} className="min-h-13 min-w-0 rounded-xl bg-white px-4 text-base text-ink placeholder:text-ink/50" />
+              <button type="submit" className={`${fillButtonClasses} min-h-13 cursor-pointer rounded-xl bg-primary px-5 text-sm font-bold text-ink before:bg-white hover:text-ink`}><AnimatedButtonLabel text={t("button")} variant="fill" /></button>
+            </div>
+            <p className="mt-3 text-xs text-white/70">{t("note")}</p>
+          </form>
+        </NewsletterAvatar>
       </div>
     </section>
   );

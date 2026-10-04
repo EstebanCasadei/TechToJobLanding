@@ -61,6 +61,12 @@ La etiqueta «Construida por Esteban Casadei» enlaza directamente a su LinkedIn
 
 Verificación local: `pnpm check`, `pnpm build` y revisión del servidor de producción en anchos de 320, 390, 768, 1440 y 1920 px. La comprobación en un móvil real queda pendiente.
 
+## Avatar de la newsletter
+
+Un Blobatar decorativo asoma por el centro del borde superior de la tarjeta del formulario. Su mirada sigue el puntero; al enfocar el email cambia a la expresión `surprised` y sigue el tecleo en el campo, y al salir recupera la expresión normal y el seguimiento del puntero. El nombre del avatar es constante y nunca utiliza el email como semilla ni envía el contenido del campo.
+
+La interacción utiliza las funciones de mirada de Blobatar ya instalado, con un pequeño componente cliente que envuelve el formulario renderizado en servidor. La posición del cursor de texto se estima a partir de la edición, las flechas, Home/End y la interacción con el campo cuando el navegador no expone `selectionStart` en inputs de email. La biblioteca respeta la reducción de movimiento. El formulario sigue siendo estático y no envía datos ni simula una suscripción.
+
 ## Verificación sin capturas
 
 Por decisión del propietario, no se toman ni se guardan capturas de pantalla, tampoco durante las comprobaciones de navegador. Las verificaciones se documentan mediante resultados de comandos y observaciones. No se incluyen archivos de `artifacts` en el repositorio.
