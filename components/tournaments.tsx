@@ -12,7 +12,7 @@ export async function TournamentsSection() {
     <section id="tournaments" className="relative scroll-mt-24 overflow-hidden bg-ink px-[var(--page-gutter)] py-[clamp(5rem,10vw,9rem)]" aria-labelledby="tournaments-heading">
       <div className="mx-auto max-w-[80rem]">
         <header className="grid gap-7 min-[60rem]:grid-cols-[1.2fr_.8fr] min-[60rem]:items-end">
-          <h2 id="tournaments-heading" className="max-w-[13ch] text-balance font-bold leading-[.95] tracking-[-.035em]">{t("title")}</h2>
+          <h2 id="tournaments-heading" className="max-w-[13ch] text-balance font-bold tracking-[-.035em]">{t("title")}</h2>
           <div>
             <p className="text-xl font-bold text-primary">{t("subtitle")}</p>
             <p className="mt-4 max-w-[54ch] leading-relaxed text-white/70">{t("lead")}</p>

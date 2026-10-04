@@ -9,7 +9,7 @@ export async function NewsSection() {
   return (
     <section className="bg-slate section-grid px-[var(--page-gutter)] py-[clamp(5rem,10vw,9rem)] text-white" aria-labelledby="news-heading">
       <div className="mx-auto max-w-[80rem]">
-        <h2 id="news-heading" className="font-bold leading-none tracking-[-.035em]">{t("news.title")}</h2>
+        <h2 id="news-heading" className="font-bold tracking-[-.035em]">{t("news.title")}</h2>
         <div className="mt-12 grid gap-6 min-[60rem]:grid-cols-[1.15fr_1fr] min-[60rem]:grid-rows-2">
           {items.map((item, index) => (
             <article key={item.title} className={`flex min-w-0 flex-col overflow-hidden rounded-2xl border border-ink/15 bg-white text-ink ${index === 0 ? "min-[60rem]:row-span-2" : ""}`}>

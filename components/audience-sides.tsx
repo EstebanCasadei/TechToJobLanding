@@ -24,7 +24,7 @@ export async function TalentSection() {
     <section id="talent" className="side relative scroll-mt-24 overflow-hidden bg-ink px-[var(--page-gutter)] py-[clamp(5rem,10vw,9rem)]" aria-labelledby="talent-heading">
       <div className="mx-auto grid max-w-[80rem] items-center gap-14 min-[64rem]:grid-cols-[.8fr_1.2fr]">
         <div>
-          <h2 id="talent-heading" className="max-w-[12ch] text-balance font-bold leading-[.95] tracking-[-.035em]">{t("talent.title")}</h2>
+          <h2 id="talent-heading" className="max-w-[12ch] text-balance font-bold tracking-[-.035em]">{t("talent.title")}</h2>
           <p className="mt-6 max-w-[48ch] text-lg leading-relaxed text-white/72">{t("talent.intro")}</p>
           <ul className="mt-8 grid gap-3">
             {talentPoints.map((key) => <li key={key} className="flex items-center gap-3 text-sm font-bold"><span className="size-2.5 rounded-full bg-primary" />{t(`talent.points.${key}`)}</li>)}
@@ -82,7 +82,7 @@ export async function CompaniesSection() {
           <CommunityAvatar name="Hiring team" size={84} className="floating-avatar absolute -right-4 bottom-0 z-40 size-20 rotate-[7deg] drop-shadow-xl" />
         </div>
         <div className="order-1 min-[64rem]:order-2">
-          <h2 id="companies-heading" className="max-w-[12ch] text-balance font-bold leading-[.95] tracking-[-.035em]">{t("companies.title")}</h2>
+          <h2 id="companies-heading" className="max-w-[12ch] text-balance font-bold tracking-[-.035em]">{t("companies.title")}</h2>
           <p className="mt-6 max-w-[45ch] text-lg leading-relaxed text-ink/85">{t("companies.intro")}</p>
           <ul className="mt-8 grid gap-3">
             {companyPoints.map((key) => <li key={key} className="flex items-center gap-3 text-sm font-bold"><span className="size-2.5 rounded-full bg-ink" />{t(`companies.points.${key}`)}</li>)}
