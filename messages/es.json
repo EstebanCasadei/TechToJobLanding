@@ -304,13 +304,20 @@
     ]
   },
   "footer": {
+    "explore": "Talento y Empresas",
+    "links": {
+      "profiles": "Perfiles",
+      "tournaments": "Torneos",
+      "search": "Publicar búsqueda",
+      "networking": "Networking"
+    },
     "description": "Comunidad de desarrolladores y empresas tech en español.",
     "talent": "Talento",
     "companies": "Empresas",
     "community": "Comunidad",
     "legal": "Legal",
-    "privacyPending": "Privacidad pendiente de publicación",
-    "termsPending": "Aviso legal pendiente de publicación",
+    "privacy": "Privacidad",
+    "legalNotice": "Aviso legal",
     "rights": "TechToJob"
   }
 }

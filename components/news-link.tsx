@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 
-export function NewsLink({ href, label }: Readonly<{ href: string; label: string }>) {
+export function NewsLink({ href, label, className = "text-ink" }: Readonly<{ href: string; label: string; className?: string }>) {
   const labelRef = useRef<HTMLSpanElement>(null);
 
   const animateUnderline = () => {
@@ -13,7 +13,7 @@ export function NewsLink({ href, label }: Readonly<{ href: string; label: string
   return (
     <a
       href={href}
-      className="inline-flex min-h-11 items-center text-sm font-bold text-ink [overflow-wrap:anywhere]"
+      className={`inline-flex min-h-11 items-center text-sm font-bold [overflow-wrap:anywhere] ${className}`}
       onPointerEnter={(event) => {
         if (event.pointerType !== "touch") animateUnderline();
       }}

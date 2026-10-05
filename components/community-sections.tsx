@@ -5,6 +5,8 @@ import { CommunityAvatar } from "@/components/community-avatar";
 import { LazyCommunityWall } from "@/components/lazy-community-wall";
 import { site } from "@/lib/site";
 import { NewsletterAvatar } from "@/components/newsletter-avatar";
+import { NewsLink } from "@/components/news-link";
+import { SocialIcon, type SocialNetwork } from "@/components/social-icon";
 
 type Testimonial = { name: string; role: string; quote: string; photoUrl?: string; profileUrl?: string };
 
@@ -130,17 +132,51 @@ export async function ClosingSection() {
 
 export async function SiteFooter() {
   const t = await getTranslations("footer");
+  const links = [
+    ["profiles", "#talent"], ["tournaments", "#tournaments"],
+    ["search", "#companies"], ["networking", "#networking"],
+  ] as const;
+  const networks: ReadonlyArray<{ key: SocialNetwork; label: string; href: string }> = [
+    { key: "discord", label: "Discord", href: site.discord },
+    { key: "linkedin", label: "LinkedIn", href: site.linkedin },
+    { key: "instagram", label: "Instagram", href: site.instagram },
+    { key: "x", label: "X", href: site.x },
+    { key: "tiktok", label: "TikTok", href: site.tiktok },
+  ];
 
   return (
-    <footer className="border-t border-white/10 bg-ink px-[var(--page-gutter)] pt-12 pb-[calc(6rem+env(safe-area-inset-bottom))] text-white">
-      <div className="mx-auto grid max-w-[80rem] gap-10 min-[52rem]:grid-cols-[1.2fr_repeat(4,1fr)]">
-        <div><div className="flex items-center gap-3"><Image src="/images/brand-mark.svg" alt="" width={44} height={44} className="size-11" /><span className="text-xl font-bold">TechToJob</span></div><p className="mt-4 max-w-[28ch] text-sm leading-relaxed text-white/70">{t("description")}</p></div>
-        <div><h2 className="text-[0.875rem] font-bold">{t("talent")}</h2><ul className="mt-4 grid gap-3 text-sm text-white/62"><li><a href="#talent" className="hover:text-primary">Perfiles</a></li><li><a href="#tournaments" className="hover:text-primary">Torneos</a></li></ul></div>
-        <div><h2 className="text-[0.875rem] font-bold">{t("companies")}</h2><ul className="mt-4 grid gap-3 text-sm text-white/62"><li><a href="#companies" className="hover:text-primary">Publicar búsqueda</a></li><li><a href="#networking" className="hover:text-primary">Networking</a></li></ul></div>
-        <div><h2 className="text-[0.875rem] font-bold">{t("community")}</h2><ul className="mt-4 grid gap-3 text-sm text-white/62"><li><a href={site.discord} className="hover:text-primary">Discord</a></li><li><a href={site.linkedin} className="hover:text-primary">LinkedIn</a></li><li><a href={site.instagram} className="hover:text-primary">Instagram</a></li><li><a href={site.x} className="hover:text-primary">X</a></li><li><a href={site.tiktok} className="hover:text-primary">TikTok</a></li></ul></div>
-        <div><h2 className="text-[0.875rem] font-bold">{t("legal")}</h2><ul className="mt-4 grid gap-3 text-sm text-white/70"><li>{t("privacyPending")}</li><li>{t("termsPending")}</li></ul></div>
+    <footer className="relative isolate overflow-hidden bg-ink px-[var(--page-gutter)] pt-16 pb-[calc(6rem+env(safe-area-inset-bottom))] min-[48rem]:pb-16 text-white">
+      <div className="mx-auto max-w-[80rem] border-t border-primary/40 pt-12">
+        <div className="grid gap-14 min-[60rem]:grid-cols-[1fr_1.1fr] min-[60rem]:gap-24">
+          <div className="flex items-center">
+            <Image src="/images/brand-logo.svg" alt="TechToJob" width={140} height={78} className="h-auto w-full max-w-[28rem]" />
+          </div>
+          <div className="grid gap-x-10 gap-y-9 min-[36rem]:grid-cols-2">
+            <nav aria-labelledby="footer-explore-heading">
+              <h2 id="footer-explore-heading" className="text-base font-bold text-primary">{t("explore")}</h2>
+              <ul className="mt-4 grid gap-1">
+                {links.map(([key, href]) => <li key={key}><NewsLink href={href} label={t(`links.${key}`)} className="text-white/85 hover:text-primary transition-colors" /></li>)}
+              </ul>
+            </nav>
+            <div>
+              <h2 className="text-base font-bold text-primary">{t("legal")}</h2>
+              <ul className="mt-4 grid gap-1">
+                <li><NewsLink href="/privacidad" label={t("privacy")} className="text-white/85 hover:text-primary transition-colors" /></li>
+                <li><NewsLink href="/aviso-legal" label={t("legalNotice")} className="text-white/85 hover:text-primary transition-colors" /></li>
+              </ul>
+            </div>
+            <div className="min-[36rem]:col-span-2 border-t border-white/15 pt-6">
+              <h2 className="text-base font-bold text-primary">{t("community")}</h2>
+              <ul className="mt-4 flex flex-wrap gap-3">
+                {networks.map(({ key, label, href }) => (
+                  <li key={key}><a href={href} aria-label={label} title={label} className="inline-flex size-12 items-center justify-center rounded-full border border-white/25 text-white transition-colors hover:bg-primary hover:text-ink"><SocialIcon network={key} /></a></li>
+                ))}
+              </ul>
+              <p className="mt-6 text-xs text-white/70">© {new Date().getFullYear()} {t("rights")}</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <p className="mx-auto mt-12 max-w-[80rem] border-t border-white/10 pt-6 text-xs text-white/70">© {new Date().getFullYear()} {t("rights")}</p>
     </footer>
   );
 }
