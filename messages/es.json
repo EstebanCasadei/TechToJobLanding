@@ -65,8 +65,8 @@
   },
   "community": {
     "join": "Entrar al Discord",
-    "joinFull": "Entrar al Discord, +500 miembros",
-    "members": "+500",
+    "joinFull": "Entrar al Discord, +{count} miembros",
+    "members": "+{count}",
     "areas": {
       "development": "Development",
       "support": "IT & Support",

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { AnimatedButtonLabel } from "@/components/animated-button-label";
 import { HeaderShell } from "@/components/header-shell";
+import { DiscordMemberLink } from "@/components/discord-member-link";
 import { MobileMenu } from "@/components/mobile-menu";
 import { site } from "@/lib/site";
 
@@ -36,14 +37,14 @@ function Navigation({ t, mobile = false }: Readonly<{ t: Translate; mobile?: boo
 
 function DiscordAction({ t, className }: Readonly<{ t: Translate; className: string }>) {
   return (
-    <a
+    <DiscordMemberLink
       className={`group/action relative items-center gap-2 overflow-hidden rounded-full bg-primary px-4 text-sm font-bold text-ink ${className}`}
-      href={site.discord}
-      aria-label={t("community.joinFull")}
+      label={t("community.joinFull", { count: "{count}" })}
+      countLabel={t("community.members", { count: "{count}" })}
+      animated
     >
       <Image src="/images/discord-dark.svg" alt="" width={20} height={20} />
-      <AnimatedButtonLabel text={t("community.members")} />
-    </a>
+    </DiscordMemberLink>
   );
 }
 

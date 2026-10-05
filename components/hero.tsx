@@ -2,7 +2,7 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { AnimatedButtonLabel } from "@/components/animated-button-label";
 import { CommunityAvatar } from "@/components/community-avatar";
-import { site } from "@/lib/site";
+import { DiscordMemberLink } from "@/components/discord-member-link";
 
 const communityAreas = [
   { key: "support", mobile: "left-6 top-8 -rotate-[6deg]", desktop: "min-[28rem]:left-6 min-[28rem]:top-6 min-[28rem]:-rotate-[6deg]" },
@@ -48,12 +48,10 @@ export async function Hero() {
             </span>
           ))}
           {communityArrows.map(([src, position, width, height]) => <Image key={src} src={src} alt="" width={width} height={height} className={`absolute z-10 h-auto scale-[.65] min-[28rem]:scale-100 ${position}`} />)}
-          <a className="group/action absolute left-1/2 top-1/2 grid min-h-16 w-[min(100%,28rem)] -translate-x-1/2 -translate-y-1/2 grid-cols-[auto_1fr_auto] items-center gap-3 overflow-hidden rounded-2xl bg-primary px-4 text-sm font-bold text-ink shadow-[0_16px_45px_rgb(0_0_0/30%)] min-[28rem]:px-6 min-[28rem]:text-base" href={site.discord} aria-label={t("community.joinFull")}>
+          <DiscordMemberLink className="group/action absolute left-1/2 top-1/2 grid min-h-16 w-[min(100%,28rem)] -translate-x-1/2 -translate-y-1/2 grid-cols-[auto_1fr_auto] items-center gap-3 overflow-hidden rounded-2xl bg-primary px-4 text-sm font-bold text-ink shadow-[0_16px_45px_rgb(0_0_0/30%)] min-[28rem]:px-6 min-[28rem]:text-base" label={t("community.joinFull", { count: "{count}" })} countLabel={t("community.members", { count: "{count}" })}>
             <Image src="/images/discord-dark.svg" alt="" width={22} height={22} loading="eager" />
             <AnimatedButtonLabel text={t("community.join")} className="justify-self-center" />
-            {" "}
-            <span>{t("community.members")}</span>
-          </a>
+          </DiscordMemberLink>
         </div>
       </div>
 
