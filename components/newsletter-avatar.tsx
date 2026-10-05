@@ -2,14 +2,36 @@
 
 import { Blobatar } from "@blobatar/react";
 import { useGaze } from "@blobatar/react/gaze";
-import { idle, surprised } from "blobatar/expression";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { idle, surprised, wink } from "blobatar/expression";
+import { useEffect, useRef, useState, type CSSProperties, type FormEvent, type ReactNode } from "react";
 import "blobatar/gaze.css";
 
 export function NewsletterAvatar({ children }: Readonly<{ children: ReactNode }>) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [focused, setFocused] = useState(false);
+  const [celebration, setCelebration] = useState(0);
+  const [showConfetti, setShowConfetti] = useState(false);
+  const celebrationTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { ref, lookAt } = useGaze({ travel: 3 });
+
+  useEffect(() => () => {
+    if (celebrationTimer.current) clearTimeout(celebrationTimer.current);
+  }, []);
+
+  const celebrate = (event: FormEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    const form = event.target;
+    if (celebrationTimer.current !== null
+      || !(form instanceof HTMLFormElement) || !form.checkValidity()) return;
+
+    setShowConfetti(!window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    setCelebration((previous) => previous + 1);
+    celebrationTimer.current = setTimeout(() => {
+      celebrationTimer.current = null;
+      setCelebration(0);
+      setShowConfetti(false);
+    }, 1600);
+  };
 
   useEffect(() => {
     const input = containerRef.current?.querySelector("input");
@@ -121,17 +143,33 @@ export function NewsletterAvatar({ children }: Readonly<{ children: ReactNode }>
   }, [lookAt]);
 
   return (
-    <div ref={containerRef} className="relative isolate mt-14">
+    <div ref={containerRef} className="relative isolate mt-14" onSubmit={celebrate}>
       <Blobatar
         ref={ref}
         name="TechToJob newsletter"
         size={112}
         animate="always"
-        expression={focused ? surprised : idle}
+        expression={celebration ? wink : focused ? surprised : idle}
         className="pointer-events-none absolute -top-30 left-2/3 -z-10 size-48 -translate-x-1/2"
         aria-hidden="true"
       />
       {children}
+      {celebration > 0 && showConfetti && (
+        <div key={celebration} className="newsletter-confetti" aria-hidden="true">
+          {Array.from({ length: 24 }, (_, index) => (
+            <span
+              key={index}
+              style={{
+                "--confetti-x": `${Math.cos(index * 50) * (100 + (index % 5) * 50)}px`,
+                "--confetti-y": `${-55 - (index % 4) * 18}px`,
+                "--confetti-rotation": `${(index % 2 ? 1 : -1) * (180 + index * 23)}deg`,
+                animationDelay: `${(index % 4) * 35}ms`,
+                backgroundColor: ["#84c0bf", "#ffffff", "#f6d776"][index % 3],
+              } as CSSProperties}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
