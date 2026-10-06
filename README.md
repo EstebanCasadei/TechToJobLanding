@@ -37,12 +37,6 @@ Todo el contenido de esta sección está en `data/news.json`, bajo la clave `es`
 - Cada noticia incluye `title`, `category`, `summary`, `date` (formato `YYYY-MM-DD`), `dateLabel` (fecha visible) y `links` (uno o varios objetos con `label` y una URL real en `url`). Actualiza ambas fechas conjuntamente.
 - La primera noticia incluye `image`: `src`, `alt`, `width` y `height`. Usa una imagen local dentro de `public/images`, escribe su ruta pública (por ejemplo, `/images/og-cover.png`) y sus dimensiones reales. Las otras dos tarjetas no muestran imagen.
 
-## Crédito de autor
-
-La etiqueta «Construida por Esteban Casadei» enlaza directamente a su LinkedIn y permanece en la esquina inferior derecha. Es un componente de servidor sin JavaScript adicional: el texto está en `messages/es.json` y los datos del autor en `lib/site.ts`. Usa los colores y la fuente del sitio, un área táctil mínima de 44 px, foco visible y márgenes que respetan el área segura del dispositivo. El footer reserva espacio inferior para evitar que el crédito cubra su contenido.
-
-Verificación local: `pnpm check`, `pnpm build` y revisión del servidor de producción en anchos de 320, 390, 768, 1440 y 1920 px. La comprobación en un móvil real queda pendiente.
-
 ## Recursos y licencias
 
 | Recurso | Procedencia | Condiciones |
