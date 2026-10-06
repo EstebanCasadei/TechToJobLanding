@@ -4,6 +4,10 @@ import { AnimatedButtonLabel, fillButtonClasses } from "@/components/animated-bu
 import { CommunityAvatar } from "@/components/community-avatar";
 import { LazyCommunityWall } from "@/components/lazy-community-wall";
 import { site } from "@/lib/site";
+import { NewsletterAvatar } from "@/components/newsletter-avatar";
+import { LegalModal } from "@/components/legal-modal";
+import { NewsLink } from "@/components/news-link";
+import { SocialIcon, type SocialNetwork } from "@/components/social-icon";
 
 type Testimonial = { name: string; role: string; quote: string; photoUrl?: string; profileUrl?: string };
 
@@ -16,7 +20,7 @@ export async function NetworkingSection() {
     <section id="networking" className="relative scroll-mt-24 overflow-hidden bg-slate section-grid px-[var(--page-gutter)] py-[clamp(5rem,10vw,9rem)] text-white" aria-labelledby="networking-heading">
       <div className="mx-auto grid max-w-[80rem] gap-16 min-[62rem]:grid-cols-[.8fr_1.2fr] min-[62rem]:items-center">
         <div>
-          <h2 id="networking-heading" className="max-w-[13ch] text-balance font-bold leading-[.95] tracking-[-.035em]">{t("title")}</h2>
+          <h2 id="networking-heading" className="max-w-[13ch] text-balance font-bold tracking-[-.035em]">{t("title")}</h2>
           <p className="mt-6 max-w-[48ch] text-lg leading-relaxed text-white/80">{t("intro")}</p>
           <div className="mt-8 flex flex-wrap gap-2">
             {channelKeys.map((key) => <span key={key} className="rounded-full bg-primary px-4 py-2 text-xs font-bold text-ink">{t(`channels.${key}`)}</span>)}
@@ -48,7 +52,7 @@ export async function TestimonialsSection() {
   return (
     <section className="overflow-hidden bg-ink py-[clamp(5rem,10vw,9rem)] text-white" aria-labelledby="testimonials-heading">
       <div className="px-[var(--page-gutter)]">
-        <h2 id="testimonials-heading" className="mx-auto max-w-[80rem] text-balance font-bold leading-[.95] tracking-[-.035em]">{t("testimonials.title")}</h2>
+        <h2 id="testimonials-heading" className="mx-auto max-w-[80rem] text-balance font-bold tracking-[-.035em]">{t("testimonials.title")}</h2>
       </div>
       <div className="mt-14 pl-[var(--page-gutter)]">
         <div className="flex w-max animate-marquee pb-8 hover:[animation-play-state:paused] focus-within:[animation-play-state:paused] motion-reduce:animate-none">
@@ -86,15 +90,17 @@ export async function NewsletterSection() {
   return (
     <section id="newsletter" className="bg-primary px-[var(--page-gutter)] py-[clamp(4rem,8vw,7rem)] text-ink" aria-labelledby="newsletter-heading">
       <div className="mx-auto grid max-w-[80rem] gap-10 min-[58rem]:grid-cols-[1fr_1fr] min-[58rem]:items-end">
-        <div><h2 id="newsletter-heading" className="max-w-[13ch] text-balance font-bold leading-[.95] tracking-[-.035em]">{t("title")}</h2><p className="mt-5 max-w-[52ch] text-lg leading-relaxed text-ink/85">{t("description")}</p></div>
-        <form action="#newsletter" className="rounded-2xl bg-ink p-5 text-white shadow-card min-[36rem]:p-7">
-          <label className="text-sm font-bold" htmlFor="newsletter-email">{t("label")}</label>
-          <div className="mt-3 grid gap-3 min-[36rem]:grid-cols-[1fr_auto]">
-            <input id="newsletter-email" name="email" type="email" autoComplete="email" required placeholder={t("placeholder")} className="min-h-13 min-w-0 rounded-xl bg-white px-4 text-base text-ink placeholder:text-ink/50" />
-            <button type="submit" className={`${fillButtonClasses} min-h-13 cursor-pointer rounded-xl bg-primary px-5 text-sm font-bold text-ink before:bg-white hover:text-ink`}><AnimatedButtonLabel text={t("button")} variant="fill" /></button>
-          </div>
-          <p className="mt-3 text-xs text-white/70">{t("note")}</p>
-        </form>
+        <div><h2 id="newsletter-heading" className="max-w-[13ch] text-balance font-bold tracking-[-.035em]">{t("title")}</h2><p className="mt-5 max-w-[52ch] text-lg leading-relaxed text-ink/85">{t("description")}</p></div>
+        <NewsletterAvatar>
+          <form action="#newsletter" className="relative rounded-2xl bg-ink p-5 text-white shadow-card min-[36rem]:p-7">
+            <label className="text-sm font-bold" htmlFor="newsletter-email">{t("label")}</label>
+            <div className="mt-3 grid gap-3 min-[36rem]:grid-cols-[1fr_auto]">
+              <input id="newsletter-email" name="email" type="email" autoComplete="email" required placeholder={t("placeholder")} className="min-h-13 min-w-0 rounded-xl bg-white px-4 text-base text-ink placeholder:text-ink/50" />
+              <button type="submit" className={`${fillButtonClasses} min-h-13 cursor-pointer rounded-xl bg-primary px-5 text-sm font-bold text-ink before:bg-white hover:text-ink`}><AnimatedButtonLabel text={t("button")} variant="fill" /></button>
+            </div>
+            <p className="mt-3 text-xs text-white/70">{t("note")}</p>
+          </form>
+        </NewsletterAvatar>
       </div>
     </section>
   );
@@ -108,7 +114,7 @@ export async function ClosingSection() {
     <section className="relative isolate overflow-hidden bg-ink px-[var(--page-gutter)] py-[clamp(6rem,12vw,11rem)]" aria-labelledby="closing-heading">
       <Image src="/images/brand-mark-outline.svg" alt="" width={880} height={880} className="absolute left-1/2 top-1/2 -z-10 w-[min(90vw,55rem)] -translate-x-1/2 -translate-y-1/2 opacity-[.02]" />
       <div className="mx-auto max-w-[80rem] text-center">
-        <h2 id="closing-heading" className="text-balance font-bold leading-[.92] tracking-[-.04em]">{t("title")}</h2>
+        <h2 id="closing-heading" className="text-balance font-bold tracking-[-.04em]">{t("title")}</h2>
         <p className="mx-auto mt-7 max-w-[55ch] text-lg leading-relaxed text-white/70">{t("description")}</p>
         <div className="mt-12">
           <LazyCommunityWall
@@ -127,17 +133,52 @@ export async function ClosingSection() {
 
 export async function SiteFooter() {
   const t = await getTranslations("footer");
+  const links = [
+    ["profiles", "#talent"], ["tournaments", "#tournaments"],
+    ["search", "#companies"], ["networking", "#networking"],
+  ] as const;
+  const networks: ReadonlyArray<{ key: SocialNetwork; label: string; href: string }> = [
+    { key: "discord", label: "Discord", href: site.discord },
+    { key: "linkedin", label: "LinkedIn", href: site.linkedin },
+    { key: "instagram", label: "Instagram", href: site.instagram },
+    { key: "x", label: "X", href: site.x },
+    { key: "tiktok", label: "TikTok", href: site.tiktok },
+  ];
 
   return (
-    <footer className="border-t border-white/10 bg-ink px-[var(--page-gutter)] pt-12 pb-[calc(6rem+env(safe-area-inset-bottom))] text-white">
-      <div className="mx-auto grid max-w-[80rem] gap-10 min-[52rem]:grid-cols-[1.2fr_repeat(4,1fr)]">
-        <div><div className="flex items-center gap-3"><Image src="/images/brand-mark.svg" alt="" width={44} height={44} className="size-11" /><span className="text-xl font-bold">TechToJob</span></div><p className="mt-4 max-w-[28ch] text-sm leading-relaxed text-white/70">{t("description")}</p></div>
-        <div><h2 className="text-sm font-bold">{t("talent")}</h2><ul className="mt-4 grid gap-3 text-sm text-white/62"><li><a href="#talent" className="hover:text-primary">Perfiles</a></li><li><a href="#tournaments" className="hover:text-primary">Torneos</a></li></ul></div>
-        <div><h2 className="text-sm font-bold">{t("companies")}</h2><ul className="mt-4 grid gap-3 text-sm text-white/62"><li><a href="#companies" className="hover:text-primary">Publicar búsqueda</a></li><li><a href="#networking" className="hover:text-primary">Networking</a></li></ul></div>
-        <div><h2 className="text-sm font-bold">{t("community")}</h2><ul className="mt-4 grid gap-3 text-sm text-white/62"><li><a href={site.discord} className="hover:text-primary">Discord</a></li><li><a href={site.linkedin} className="hover:text-primary">LinkedIn</a></li><li><a href={site.instagram} className="hover:text-primary">Instagram</a></li><li><a href={site.x} className="hover:text-primary">X</a></li><li><a href={site.tiktok} className="hover:text-primary">TikTok</a></li></ul></div>
-        <div><h2 className="text-sm font-bold">{t("legal")}</h2><ul className="mt-4 grid gap-3 text-sm text-white/70"><li>{t("privacyPending")}</li><li>{t("termsPending")}</li></ul></div>
+    <footer className="relative isolate overflow-hidden bg-ink px-[var(--page-gutter)] pt-16 pb-[calc(6rem+env(safe-area-inset-bottom))] min-[48rem]:pb-16 text-white">
+      <div className="mx-auto max-w-[80rem] border-t border-primary/40 pt-12">
+        <div className="grid gap-14 min-[60rem]:grid-cols-[1fr_1.1fr] min-[60rem]:gap-24">
+          <div className="flex items-center">
+            <Image src="/images/brand-logo.svg" alt="TechToJob" width={140} height={78} className="h-auto w-full max-w-[28rem]" />
+          </div>
+          <div className="grid gap-x-10 gap-y-9 min-[36rem]:grid-cols-2">
+            <nav aria-labelledby="footer-explore-heading">
+              <h2 id="footer-explore-heading" className="text-base font-bold text-primary">{t("explore")}</h2>
+              <ul className="mt-4 grid gap-1">
+                {links.map(([key, href]) => <li key={key}><NewsLink href={href} label={t(`links.${key}`)} className="text-white/85 hover:text-primary transition-colors" /></li>)}
+              </ul>
+            </nav>
+            <div>
+              <h2 className="text-base font-bold text-primary">{t("legal")}</h2>
+              <ul className="mt-4 grid gap-1">
+                {(["privacy", "legalNotice"] as const).map((key) => (
+                  <li key={key}><LegalModal title={t(key)} notice={t("modal.notice")} closeLabel={t("modal.close")} description={t(`modal.${key}.description`)} sections={t.raw(`modal.${key}.sections`) as { title: string; description: string }[]} /></li>
+                ))}
+              </ul>
+            </div>
+            <div className="min-[36rem]:col-span-2 border-t border-white/15 pt-6">
+              <h2 className="text-base font-bold text-primary">{t("community")}</h2>
+              <ul className="mt-4 flex flex-wrap gap-3">
+                {networks.map(({ key, label, href }) => (
+                  <li key={key}><a href={href} aria-label={label} title={label} className="inline-flex size-12 items-center justify-center rounded-full border border-white/25 text-white transition-colors hover:bg-primary hover:text-ink"><SocialIcon network={key} /></a></li>
+                ))}
+              </ul>
+              <p className="mt-6 text-xs text-white/70">© {new Date().getFullYear()} {t("rights")}</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <p className="mx-auto mt-12 max-w-[80rem] border-t border-white/10 pt-6 text-xs text-white/70">© {new Date().getFullYear()} {t("rights")}</p>
     </footer>
   );
 }

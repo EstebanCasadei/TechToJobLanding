@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import type { NewsItem } from "@/lib/news";
+import { NewsLink } from "@/components/news-link";
 
 export async function NewsSection() {
   const t = await getTranslations();
@@ -9,7 +10,7 @@ export async function NewsSection() {
   return (
     <section className="bg-slate section-grid px-[var(--page-gutter)] py-[clamp(5rem,10vw,9rem)] text-white" aria-labelledby="news-heading">
       <div className="mx-auto max-w-[80rem]">
-        <h2 id="news-heading" className="font-bold leading-none tracking-[-.035em]">{t("news.title")}</h2>
+        <h2 id="news-heading" className="font-bold tracking-[-.035em]">{t("news.title")}</h2>
         <div className="mt-12 grid gap-6 min-[60rem]:grid-cols-[1.15fr_1fr] min-[60rem]:grid-rows-2">
           {items.map((item, index) => (
             <article key={item.title} className={`flex min-w-0 flex-col overflow-hidden rounded-2xl border border-ink/15 bg-white text-ink ${index === 0 ? "min-[60rem]:row-span-2" : ""}`}>
@@ -33,9 +34,7 @@ export async function NewsSection() {
                 <ul className="mt-auto flex flex-wrap gap-x-5 gap-y-2 pt-5">
                   {item.links.map((link) => (
                     <li key={link.url} className="min-w-0">
-                      <a href={link.url} className="inline-flex min-h-11 items-center gap-2 text-sm font-bold text-ink underline decoration-primary decoration-2 underline-offset-4 [overflow-wrap:anywhere]">
-                        {link.label}
-                      </a>
+                      <NewsLink href={link.url} label={link.label} />
                     </li>
                   ))}
                 </ul>

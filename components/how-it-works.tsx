@@ -17,7 +17,7 @@ export async function HowItWorks() {
     <section id="how-it-works" className="relative scroll-mt-24 overflow-hidden bg-slate section-grid px-[var(--page-gutter)] py-[clamp(5rem,10vw,9rem)] text-white" aria-labelledby="how-it-works-heading">
       <div className="mx-auto max-w-[80rem]">
         <header className="max-w-[60rem]">
-          <h2 id="how-it-works-heading" className="text-balance font-bold leading-[.98] tracking-[-.035em]">{t("title")}</h2>
+          <h2 id="how-it-works-heading" className="text-balance font-bold tracking-[-.035em]">{t("title")}</h2>
           <p className="mt-5 max-w-[50ch] text-lg font-bold text-white/80">{t("subtitle")}</p>
         </header>
 

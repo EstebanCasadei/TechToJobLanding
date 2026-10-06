@@ -65,8 +65,8 @@
   },
   "community": {
     "join": "Entrar al Discord",
-    "joinFull": "Entrar al Discord, +500 miembros",
-    "members": "+500",
+    "joinFull": "Entrar al Discord, +{count} miembros",
+    "members": "+{count}",
     "areas": {
       "development": "Development",
       "support": "IT & Support",
@@ -304,13 +304,40 @@
     ]
   },
   "footer": {
+    "explore": "Talento y Empresas",
+    "links": {
+      "profiles": "Perfiles",
+      "tournaments": "Torneos",
+      "search": "Publicar búsqueda",
+      "networking": "Networking"
+    },
     "description": "Comunidad de desarrolladores y empresas tech en español.",
     "talent": "Talento",
     "companies": "Empresas",
     "community": "Comunidad",
     "legal": "Legal",
-    "privacyPending": "Privacidad pendiente de publicación",
-    "termsPending": "Aviso legal pendiente de publicación",
+    "privacy": "Privacidad",
+    "legalNotice": "Aviso legal",
+    "modal": {
+      "close": "Cerrar",
+      "notice": "Contenido de demostración. Este texto es provisional y no constituye el documento legal definitivo.",
+      "privacy": {
+        "description": "Aquí se publicará la información sobre privacidad de TechToJob cuando esté disponible.",
+        "sections": [
+          { "title": "Responsable y contacto", "description": "Información pendiente de completar con los datos y el contacto del responsable." },
+          { "title": "Datos y finalidad", "description": "Espacio reservado para explicar qué datos se tratan, para qué se utilizan y durante cuánto tiempo se conservan." },
+          { "title": "Tus derechos", "description": "Espacio reservado para indicar cómo realizar consultas y ejercer los derechos aplicables." }
+        ]
+      },
+      "legalNotice": {
+        "description": "Aquí se publicará el aviso legal de TechToJob cuando esté disponible.",
+        "sections": [
+          { "title": "Identificación", "description": "Información pendiente de completar con los datos del titular de la web." },
+          { "title": "Condiciones de uso", "description": "Espacio reservado para las condiciones de uso de la web y sus contenidos." },
+          { "title": "Contenido y enlaces", "description": "Espacio reservado para la información relativa a los recursos publicados y los enlaces externos." }
+        ]
+      }
+    },
     "rights": "TechToJob"
   }
 }
