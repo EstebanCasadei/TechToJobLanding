@@ -318,6 +318,26 @@
     "legal": "Legal",
     "privacy": "Privacidad",
     "legalNotice": "Aviso legal",
+    "modal": {
+      "close": "Cerrar",
+      "notice": "Contenido de demostración. Este texto es provisional y no constituye el documento legal definitivo.",
+      "privacy": {
+        "description": "Aquí se publicará la información sobre privacidad de TechToJob cuando esté disponible.",
+        "sections": [
+          { "title": "Responsable y contacto", "description": "Información pendiente de completar con los datos y el contacto del responsable." },
+          { "title": "Datos y finalidad", "description": "Espacio reservado para explicar qué datos se tratan, para qué se utilizan y durante cuánto tiempo se conservan." },
+          { "title": "Tus derechos", "description": "Espacio reservado para indicar cómo realizar consultas y ejercer los derechos aplicables." }
+        ]
+      },
+      "legalNotice": {
+        "description": "Aquí se publicará el aviso legal de TechToJob cuando esté disponible.",
+        "sections": [
+          { "title": "Identificación", "description": "Información pendiente de completar con los datos del titular de la web." },
+          { "title": "Condiciones de uso", "description": "Espacio reservado para las condiciones de uso de la web y sus contenidos." },
+          { "title": "Contenido y enlaces", "description": "Espacio reservado para la información relativa a los recursos publicados y los enlaces externos." }
+        ]
+      }
+    },
     "rights": "TechToJob"
   }
 }

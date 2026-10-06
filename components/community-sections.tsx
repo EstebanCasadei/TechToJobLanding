@@ -5,6 +5,7 @@ import { CommunityAvatar } from "@/components/community-avatar";
 import { LazyCommunityWall } from "@/components/lazy-community-wall";
 import { site } from "@/lib/site";
 import { NewsletterAvatar } from "@/components/newsletter-avatar";
+import { LegalModal } from "@/components/legal-modal";
 import { NewsLink } from "@/components/news-link";
 import { SocialIcon, type SocialNetwork } from "@/components/social-icon";
 
@@ -161,8 +162,9 @@ export async function SiteFooter() {
             <div>
               <h2 className="text-base font-bold text-primary">{t("legal")}</h2>
               <ul className="mt-4 grid gap-1">
-                <li><NewsLink href="/privacidad" label={t("privacy")} className="text-white/85 hover:text-primary transition-colors" /></li>
-                <li><NewsLink href="/aviso-legal" label={t("legalNotice")} className="text-white/85 hover:text-primary transition-colors" /></li>
+                {(["privacy", "legalNotice"] as const).map((key) => (
+                  <li key={key}><LegalModal title={t(key)} notice={t("modal.notice")} closeLabel={t("modal.close")} description={t(`modal.${key}.description`)} sections={t.raw(`modal.${key}.sections`) as { title: string; description: string }[]} /></li>
+                ))}
               </ul>
             </div>
             <div className="min-[36rem]:col-span-2 border-t border-white/15 pt-6">

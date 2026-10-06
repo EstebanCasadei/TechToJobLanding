@@ -1,8 +1,12 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, type FocusEvent, type PointerEvent } from "react";
 
-export function NewsLink({ href, label, className = "text-ink" }: Readonly<{ href: string; label: string; className?: string }>) {
+type Props = { label: string; className?: string } & (
+  { href: string; onClick?: never } | { href?: never; onClick: () => void }
+);
+
+export function NewsLink({ href, onClick, label, className = "text-ink" }: Readonly<Props>) {
   const labelRef = useRef<HTMLSpanElement>(null);
 
   const animateUnderline = () => {
@@ -10,17 +14,16 @@ export function NewsLink({ href, label, className = "text-ink" }: Readonly<{ hre
     labelRef.current?.classList.add("is-animating");
   };
 
-  return (
-    <a
-      href={href}
-      className={`inline-flex min-h-11 items-center text-sm font-bold [overflow-wrap:anywhere] ${className}`}
-      onPointerEnter={(event) => {
+  const interaction = {
+      className: `inline-flex min-h-11 cursor-pointer items-center text-sm font-bold [overflow-wrap:anywhere] ${className}`,
+      onPointerEnter: (event: PointerEvent<HTMLElement>) => {
         if (event.pointerType !== "touch") animateUnderline();
-      }}
-      onFocus={(event) => {
+      },
+      onFocus: (event: FocusEvent<HTMLElement>) => {
         if (event.currentTarget.matches(":focus-visible")) animateUnderline();
-      }}
-    >
+      },
+  };
+  const content = (
       <span
         ref={labelRef}
         className="news-link-label"
@@ -28,6 +31,8 @@ export function NewsLink({ href, label, className = "text-ink" }: Readonly<{ hre
       >
         {label}
       </span>
-    </a>
   );
+  return onClick
+    ? <button type="button" {...interaction} onClick={onClick} aria-haspopup="dialog">{content}</button>
+    : <a href={href} {...interaction}>{content}</a>;
 }
