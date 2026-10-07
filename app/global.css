@@ -150,6 +150,41 @@
   to { opacity: 1; scale: 1; }
 }
 
+.author-card {
+  translate: 0 0;
+  transition: translate 450ms cubic-bezier(.22, 1, .36, 1);
+  animation: author-card-float 7s ease-in-out infinite;
+}
+
+.author-card-message {
+  animation-delay: -2.4s;
+  animation-duration: 8.5s;
+}
+
+.author-card-project {
+  animation-delay: -4.2s;
+  animation-duration: 9s;
+}
+
+@keyframes author-card-float {
+  0%, 100% { transform: translate(var(--card-mouse-x, 0px), var(--card-mouse-y, 0px)); }
+  50% { transform: translate(var(--card-mouse-x, 0px), calc(var(--card-mouse-y, 0px) - 10px)); }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .author-card-stack[data-expanded="true"] .author-card-profile {
+    translate: 0 -28px;
+  }
+
+  .author-card-stack[data-expanded="true"] .author-card-message {
+    translate: 8px 0;
+  }
+
+  .author-card-stack[data-expanded="true"] .author-card-project {
+    translate: 0 36px;
+  }
+}
+
 .newsletter-confetti {
   position: absolute;
   inset: -220px 0 auto;

@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { AnimatedButtonLabel, fillButtonClasses } from "@/components/animated-button-label";
 import { CommunityAvatar } from "@/components/community-avatar";
 import { LazyCommunityWall } from "@/components/lazy-community-wall";
-import { site } from "@/lib/site";
+import { author, site } from "@/lib/site";
 import { NewsletterAvatar } from "@/components/newsletter-avatar";
 import { LegalModal } from "@/components/legal-modal";
 import { NewsLink } from "@/components/news-link";
@@ -175,6 +175,7 @@ export async function SiteFooter() {
                 ))}
               </ul>
               <p className="mt-6 text-xs text-white/70">© {new Date().getFullYear()} {t("rights")}</p>
+              <NewsLink href={author.linkedin} label={t("authorCredit", { name: author.name })} className="mt-1 text-white/85 hover:text-primary transition-colors" />
             </div>
           </div>
         </div>

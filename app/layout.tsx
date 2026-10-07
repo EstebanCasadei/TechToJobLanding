@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Sora } from "next/font/google";
 import { getLocale, getTranslations } from "next-intl/server";
 import type { ReactNode } from "react";
-import { AuthorCredit } from "@/components/author-credit";
 import { site, siteUrl } from "@/lib/site";
 import "blobatar/motion.css";
 import "./global.css";
@@ -72,7 +71,6 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
         {children}
-        <AuthorCredit />
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { AnimatedButtonLabel } from "@/components/animated-button-label";
-import { CommunityAvatar } from "@/components/community-avatar";
+import { AuthorCredit } from "@/components/author-credit";
 import { DiscordMemberLink } from "@/components/discord-member-link";
 
 const communityAreas = [
@@ -35,7 +35,6 @@ export async function Hero() {
           <p className="text-white/72">{t("hero.context")}</p>
         </div>
         <div className="relative mx-auto mt-7 h-60 w-full max-w-[35rem] min-[64rem]:mx-0">
-          <p className="sr-only">{t("hero.activity.status")}</p>
           <div className="absolute left-1/2 top-1/2 -z-10 size-[min(110vw,36rem)] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/8 before:absolute before:inset-[10%] before:rounded-full before:border before:border-white/7 before:content-[''] after:absolute after:inset-[24%] after:rounded-full after:border after:border-white/7 after:content-[''] min-[64rem]:hidden" aria-hidden="true" />
           {communityAreas.map((area) => (
             <span key={area.key} className={`absolute z-20 text-[.65rem] font-bold text-white min-[28rem]:text-xs ${area.mobile} ${area.desktop}`}>
@@ -55,52 +54,7 @@ export async function Hero() {
         </div>
       </div>
 
-      <div className="relative mx-auto mt-16 min-h-[31rem] w-full max-w-[39rem] min-[64rem]:mt-0">
-        <p className="sr-only">{t("hero.activity.status")}</p>
-        <div className="scene-card absolute left-[3%] top-[4%] z-20 w-[72%] -rotate-[4deg] rounded-2xl bg-white p-5 text-ink shadow-card">
-          <div className="flex items-center gap-3">
-            <CommunityAvatar name="Alex R frontend" size={52} className="size-13 shrink-0" />
-            <div>
-              <p className="text-sm font-bold">{t("profile.name")}</p>
-              <p className="text-xs text-ink/80">{t("profile.role")}</p>
-            </div>
-            <span className="ml-auto size-2.5 rounded-full bg-primary" aria-hidden="true" />
-          </div>
-          <div className="mt-5 grid gap-2 text-sm">
-            <p className="rounded-xl bg-ink/6 px-3 py-2">React · TypeScript · Next.js</p>
-            <p className="rounded-xl bg-primary/30 px-3 py-2 font-bold">{t("profile.strengths.project")}</p>
-          </div>
-        </div>
-
-        <div className="scene-card absolute right-[1%] top-[29%] z-30 w-[76%] rotate-[3deg] rounded-2xl bg-discord-chat p-4 text-discord-text shadow-card">
-          <p className="mb-4 text-xs font-bold text-primary">{t("hero.activity.channel")}</p>
-          <div className="flex gap-3">
-            <CommunityAvatar name="Marina codes" size={42} className="size-11 shrink-0" />
-            <div>
-              <p className="text-sm font-bold text-white">{t("hero.activity.author")} <span className="ml-1 text-[.65rem] font-normal text-discord-muted">{t("hero.activity.time")}</span></p>
-              <p className="mt-1 text-sm leading-relaxed">{t("hero.activity.message")}</p>
-            </div>
-          </div>
-          <div className="ml-9 mt-4 flex gap-3 rounded-xl bg-discord-embed p-3">
-            <CommunityAvatar name="Noa helps" size={34} className="size-9 shrink-0" />
-            <p className="text-sm leading-relaxed"><strong className="text-white">{t("hero.activity.replier")}</strong><br />{t("hero.activity.reply")}</p>
-          </div>
-        </div>
-
-        <div className="scene-card absolute bottom-[3%] left-[8%] z-10 w-[68%] -rotate-[2deg] rounded-2xl bg-postit p-5 text-ink shadow-card">
-          <p className="text-xs font-bold uppercase tracking-[.16em]">{t("hero.activity.pullRequest")}</p>
-          <div className="mt-4 space-y-2" aria-hidden="true">
-            <span className="block h-2 w-4/5 rounded-full bg-ink/75" />
-            <span className="block h-2 w-3/5 rounded-full bg-ink/35" />
-            <span className="block h-2 w-2/3 rounded-full bg-primary" />
-          </div>
-          <div className="mt-5 flex -space-x-2">
-            {['Ana review', 'Leo dev', 'Cris product'].map((name) => <CommunityAvatar key={name} name={name} size={34} className="size-9 rounded-full ring-2 ring-transparent" />)}
-            <span className="flex size-9 items-center justify-center rounded-full bg-ink text-xs font-bold text-white ring-2 ring-transparent">+8</span>
-          </div>
-        </div>
-
-      </div>
+      <AuthorCredit />
     </section>
   );
 }
