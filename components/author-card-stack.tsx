@@ -10,6 +10,33 @@ export function AuthorCardStack({ children }: Readonly<{ children: ReactNode }>)
   const desiredRef = useRef(false);
   const pointerRef = useRef(false);
   const focusRef = useRef(false);
+  const targetRef = useRef({ x: 0, y: 0 });
+  const positionRef = useRef({ x: 0, y: 0 });
+
+  const easePointer = () => {
+    if (frameRef.current) return;
+    let previousTime = 0;
+    const tick = (time: number) => {
+      const elapsed = previousTime ? Math.min(time - previousTime, 32) : 16;
+      previousTime = time;
+      const amount = 1 - Math.exp(-elapsed / 140);
+      const position = positionRef.current;
+      const target = targetRef.current;
+      position.x += (target.x - position.x) * amount;
+      position.y += (target.y - position.y) * amount;
+      const settled = Math.abs(target.x - position.x) < .01 && Math.abs(target.y - position.y) < .01;
+      if (settled) { position.x = target.x; position.y = target.y; }
+      stackRef.current?.style.setProperty("--card-mouse-x", `${position.x}px`);
+      stackRef.current?.style.setProperty("--card-mouse-y", `${position.y}px`);
+      frameRef.current = settled ? 0 : requestAnimationFrame(tick);
+    };
+    frameRef.current = requestAnimationFrame(tick);
+  };
+
+  const returnToCenter = () => {
+    targetRef.current = { x: 0, y: 0 };
+    easePointer();
+  };
 
   const requestExpansion = () => {
     desiredRef.current = pointerRef.current || focusRef.current;
@@ -27,6 +54,9 @@ export function AuthorCardStack({ children }: Readonly<{ children: ReactNode }>)
 
   const reset = () => {
     cancelAnimationFrame(frameRef.current);
+    frameRef.current = 0;
+    targetRef.current = { x: 0, y: 0 };
+    positionRef.current = { x: 0, y: 0 };
     stackRef.current?.style.setProperty("--card-mouse-x", "0px");
     stackRef.current?.style.setProperty("--card-mouse-y", "0px");
   };
@@ -47,18 +77,20 @@ export function AuthorCardStack({ children }: Readonly<{ children: ReactNode }>)
     const bounds = event.currentTarget.getBoundingClientRect();
     const x = Math.max(-1, Math.min(1, (event.clientX - bounds.left) / bounds.width * 2 - 1));
     const y = Math.max(-1, Math.min(1, (event.clientY - bounds.top) / bounds.height * 2 - 1));
-    cancelAnimationFrame(frameRef.current);
-    frameRef.current = requestAnimationFrame(() => {
-      stackRef.current?.style.setProperty("--card-mouse-x", `${x * 4}px`);
-      stackRef.current?.style.setProperty("--card-mouse-y", `${y * 3}px`);
-    });
+    // Fade movement in at the boundary so grazing a corner cannot jerk a card.
+    const distance = Math.min(event.clientX - bounds.left, bounds.right - event.clientX,
+      event.clientY - bounds.top, bounds.bottom - event.clientY);
+    const edge = Math.max(0, Math.min(1, distance / 48));
+    const strength = edge * edge * (3 - 2 * edge);
+    targetRef.current = { x: x * 3 * strength, y: y * 2 * strength };
+    easePointer();
   };
 
   return (
     <div ref={stackRef} onPointerMove={followPointer}
       onPointerEnter={() => { pointerRef.current = true; requestExpansion(); }}
-      onPointerLeave={() => { pointerRef.current = false; reset(); requestExpansion(); }}
-      onPointerCancel={() => { pointerRef.current = false; reset(); requestExpansion(); }}
+      onPointerLeave={() => { pointerRef.current = false; returnToCenter(); requestExpansion(); }}
+      onPointerCancel={() => { pointerRef.current = false; returnToCenter(); requestExpansion(); }}
       onFocusCapture={() => { focusRef.current = true; requestExpansion(); }}
       onBlurCapture={(event) => {
         if (event.currentTarget.contains(event.relatedTarget)) return;

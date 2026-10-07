@@ -46,7 +46,7 @@ export async function AuthorCredit() {
         </div>
       </div>
 
-      <div className="author-card author-card-project relative z-10 -mt-12 ml-[5%] w-[78%] -rotate-[2deg] rounded-2xl bg-postit p-5 text-ink shadow-card min-[36rem]:w-[70%]">
+      <div className="author-card author-card-project relative z-10 -mt-2 ml-[5%] w-[78%] -rotate-[2deg] rounded-2xl bg-postit p-5 text-ink shadow-card min-[36rem]:w-[70%] min-[36rem]:-mt-8">
         <p className="text-xs font-bold uppercase tracking-[.16em]">{t("projectLabel")}</p>
         <div className="mt-4 space-y-2" aria-hidden="true">
           <span className="block h-2 w-4/5 rounded-full bg-ink/75" />
