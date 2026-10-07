@@ -1,12 +1,12 @@
 {
   "authorCredit": {
     "channel": "#torneos",
-    "createdBy": "Este sitio fue creado por él",
+    "createdBy": "Este sitio fue creado por el ganador del torneo",
     "creativeNote": "De un reto de la comunidad a la web que estás viendo.",
     "projectLabel": "Gana experiencia real",
-    "label": "Sitio web hecho por",
+    "label": "Sitio web realizado por",
     "award": "Ganador del torneo de landing pages",
-    "recognition": "La landing ganadora de TechToJob, creada por Esteban Casadei.",
+    "recognition": "¡WOW! Que bien queda la landing de TechToJob.",
     "profile": "Conoce a Esteban en LinkedIn"
   },
   "brand": {
@@ -311,7 +311,7 @@
     ]
   },
   "footer": {
-    "authorCredit": "Sitio web hecho por: {name}",
+    "authorCredit": "Sitio web realizado por {name}",
     "explore": "Talento y Empresas",
     "links": {
       "profiles": "Perfiles",
