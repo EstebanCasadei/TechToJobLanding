@@ -1,6 +1,13 @@
 {
   "authorCredit": {
-    "label": "Construida por"
+    "channel": "#torneos",
+    "createdBy": "Este sitio fue creado por el ganador del torneo",
+    "creativeNote": "De un reto de la comunidad a la web que estás viendo.",
+    "projectLabel": "Gana experiencia real",
+    "label": "Sitio web realizado por",
+    "award": "Ganador del torneo de landing pages",
+    "recognition": "¡WOW! Que bien queda la landing de TechToJob.",
+    "profile": "Conoce a Esteban en LinkedIn"
   },
   "brand": {
     "name": "TechToJob"
@@ -304,6 +311,7 @@
     ]
   },
   "footer": {
+    "authorCredit": "Sitio web realizado por {name}",
     "explore": "Talento y Empresas",
     "links": {
       "profiles": "Perfiles",
